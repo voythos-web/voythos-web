@@ -27,9 +27,9 @@ const ButtonBody: React.FC<ButtonBodyProps> = ({
                 ${colorprimary ? 'bg-primary text-light hover:bg-primary/65' : 'bg-light text-zinc-800 hover:bg-light/75 hover:outline hover:outline-light'}
                 ${font_med.className}
             `}>
-            <Link href={href}>
+            <a href={href} rel="noopener noreferrer" target="_blank">
                 {text}
-            </Link>
+            </a>
         </button>
     );
 }
