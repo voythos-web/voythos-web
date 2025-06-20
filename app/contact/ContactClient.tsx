@@ -1,11 +1,8 @@
 'use client';
 
 import { font_head } from "../fonts";
-import { font_med } from "../fonts";
-import Button from "../components/Button";
 
-import Link from "next/link";
-import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import ButtonBody from "../components/ButtonBody";
 

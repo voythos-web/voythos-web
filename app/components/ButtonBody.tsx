@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import { font_med } from "../fonts";
 
 interface ButtonBodyProps {
