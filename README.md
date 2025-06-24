@@ -1,13 +1,13 @@
 # Voythos Web
 
-An updated website for Voythos. View [here](https://www.voythos.io/).
+An updated website for Voythos.
 
-## Tech Stack
+## Stack
 - [Next.js](https://nextjs.org/)
 - [Node.js](https://nodejs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-## Getting Started
+## Getting started
 Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/leesadie/voythos-web.git
