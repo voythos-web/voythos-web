@@ -1,6 +1,11 @@
 import ClientOnly from "@/app/components/ClientOnly";
 import May25Client from "./May25Client";
 
+export const metadata = {
+    title: "May 25 News",
+    description: "Voythos Awarded First Place in LifeX 2023 Accelerator"
+}
+
 const May25Page = () => {
     return (
         <ClientOnly>
