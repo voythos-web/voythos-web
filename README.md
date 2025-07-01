@@ -1,6 +1,6 @@
 # Voythos Web
 
-An updated website for Voythos.
+An updated website for Voythos. View at [voythos.io](https://www.voythos.io/)
 
 ## Stack
 - [Next.js](https://nextjs.org/)
