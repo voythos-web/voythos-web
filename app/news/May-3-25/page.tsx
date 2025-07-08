@@ -1,7 +1,8 @@
 import ClientOnly from "@/app/components/ClientOnly";
 import May3Client from "./May3Client";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "May 3 News",
     description: "Voythos featured in Mayo Clinic Platform_Accelerate showcase"
 }

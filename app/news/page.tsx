@@ -1,7 +1,8 @@
 import ClientOnly from "../components/ClientOnly";
 import NewsClient from "./NewsClient";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
     title: "News",
     description: "The latest news and updates"
 }
