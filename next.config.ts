@@ -34,17 +34,17 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/industry/category/Predictive+AI',
+        source: '/industry/category/Predictive\\+AI',
         destination: '/',
         permanent: true,
       },
       {
-        source: '/industry/tag/prophylactic+aortic+surgery',
+        source: '/industry/tag/prophylactic\\+aortic\\+surgery',
         destination: '/',
         permanent: true,
       },
       {
-        source: '/industry/tag/adminstrative+ai',
+        source: '/industry/tag/adminstrative\\+ai',
         destination: '/',
         permanent: true,
       },
@@ -74,12 +74,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/industry/category/Aortic+Dissection+AI',
+        source: '/industry/category/Aortic\\+Dissection\\+AI',
         destination: '/',
         permanent: true,
       },
       {
-        source: '/industry/tag/patient+monitoring',
+        source: '/industry/tag/patient\\+monitoring',
         destination: '/',
         permanent: true,
       },
@@ -89,7 +89,7 @@ const nextConfig: NextConfig = {
         permanent: true, 
       },
       {
-        source: '/industry/tag/improve+efficiency',
+        source: '/industry/tag/improve\\+efficiency',
         destination: '/',
         permanent: true,
       },
@@ -99,12 +99,12 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/industry/tag/patient+outcome',
+        source: '/industry/tag/patient\\+outcome',
         destination: '/',
         permanent: true,
       },
       {
-        source: '/industry/tag/aortic+surgery',
+        source: '/industry/tag/aortic\\+surgery',
         destination: '/',
         permanent: true,
       },
