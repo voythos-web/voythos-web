@@ -118,7 +118,12 @@ export default function ParticleAorta() {
                 <ambientLight intensity={0.5}/>
                 <Environment preset='sunset'/>
                 <AortaParticles />
-                <OrbitControls target={[0, 0, 0]} />
+                <OrbitControls 
+                    target={[0, 0, 0]} 
+                    enableZoom={false}
+                    enablePan={false}
+                    enableRotate={false}
+                />
             </Canvas>
         </div>
     );
