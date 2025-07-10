@@ -52,7 +52,7 @@ const Main = () => {
                             Transforming the delivery of aortic care.
                         </div>
                         <div className="hidden md:block text-indigo-50 text-xl pt-4 pr-16">
-                            We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex cardiovascular diseases.
+                            We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
                         </div>
                         <div className="pt-6 hidden md:block">
                             <Button 
@@ -69,7 +69,7 @@ const Main = () => {
                         <ParticleAorta />
                     </div>
                     <div className={`md:hidden text-indigo-50 text-xl pt-4 ${font_med.className}`}>
-                        We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex cardiovascular diseases.
+                        We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
                     </div>
                 </div>
             </section>
