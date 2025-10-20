@@ -94,7 +94,7 @@ const Main = () => {
                 <div className="flex md:flex-row flex-col md:items-start md:justify-center md:gap-52 w-full">
                     <div className="flex flex-col md:w-1/2">
                         <div className={`md:text-4xl text-2xl text-light ${font_head.className}`}>
-                            Building innovative, multimodal AI solutions centered around clinical care and rigorous research.
+                            Building innovative multimodal AI solutions centered around clinical care and rigorous research.
                         </div>
                     </div>
                     <div className="flex flex-col md:w-1/2 pt-8">
