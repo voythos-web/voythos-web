@@ -12,7 +12,7 @@ const May3Client = () => {
                 href="https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-platform_accelerate-showcase-celebrates-promise-of-health-tech-innovation-for-improving-patient-care/"
                 nextpage="/news/Apr-18-25"
                 date="May 3, 2025"
-            />
+            />a
         </div>
     );
 }

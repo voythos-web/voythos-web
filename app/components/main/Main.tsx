@@ -424,6 +424,17 @@ const Main = () => {
                             />
                         </a>
                     </div>
+                    <div>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.mayoclinicplatform.org/">
+                            <Image
+                                src='/images/mayoclinic.svg'
+                                alt="Mayo Clinic"
+                                height={160}
+                                width={160}
+                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
+                            />
+                        </a>
+                    </div>
                 </div>
                 <div className="md:hidden">
                     <div className="flex flex-row justify-between pt-12">
@@ -482,6 +493,19 @@ const Main = () => {
                                     alt="Science Center"
                                     height={80}
                                     width={80}
+                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
+                                />
+                            </a>
+                        </div>
+                    </div>
+                    <div className="pt-12">
+                        <div className="px-3">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.mayoclinicplatform.org/">
+                                <Image
+                                    src='/images/mayoclinic.svg'
+                                    alt="Mayo Clinic"
+                                    height={160}
+                                    width={160}
                                     className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
                                 />
                             </a>
