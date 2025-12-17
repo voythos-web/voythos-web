@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "May 25 News",
-    description: "Voythos Awarded First Place in LifeX 2023 Accelerator"
+    description: "Voythos Awarded First Place in LifeX Accelerator"
 }
 
 const May25Page = () => {

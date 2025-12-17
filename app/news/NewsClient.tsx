@@ -54,7 +54,7 @@ const NewsClient = () => {
                         href="/news/Jun-17-24"
                     />
                     <NewsCard 
-                        text="Voythos Awarded First Place in LifeX 2023 Accelerator"
+                        text="Voythos Awarded First Place in LifeX Accelerator"
                         date="May 25, 2024"
                         href="/news/May-25-24"
                     />
