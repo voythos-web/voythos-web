@@ -80,7 +80,6 @@ const Main = () => {
                 className="
                     bg-[url('/images/backgrounds/wave_bg.png')]
                     bg-cover
-                    md:h-screen
                     min-h-screen
                     w-screen
                     flex
@@ -89,35 +88,90 @@ const Main = () => {
                     items-center
                     md:px-20
                     px-4
+                    py-20
                 "
             >
-                <div className="flex md:flex-row flex-col md:items-start md:justify-center md:gap-52 w-full">
-                    <div className="flex flex-col md:w-1/2">
-                        <div className={`md:text-4xl text-2xl text-light ${font_head.className}`}>
-                            Building innovative multimodal AI solutions centered around clinical care and rigorous research.
+                {/* Hero Statement */}
+                <div className={`text-light md:text-6xl text-3xl text-center max-w-4xl ${font_head.className}`}>
+                    We predict which patients will progress.
+                </div>
+
+                {/* The Equation */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-light text-center">
+                        <div className={`md:text-xl text-base ${font_med.className}`}>Longitudinal Patient Data</div>
+                    </div>
+                    <div className={`text-light md:text-4xl text-2xl ${font_head.className}`}>+</div>
+                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-light text-center">
+                        <div className={`md:text-xl text-base ${font_med.className}`}>Advanced AI Modeling</div>
+                    </div>
+                    <div className={`text-light md:text-4xl text-2xl ${font_head.className}`}>=</div>
+                    <div className="bg-primary/80 backdrop-blur-sm border border-primary rounded-2xl px-6 py-4 text-light text-center">
+                        <div className={`md:text-xl text-base ${font_med.className}`}>The first platform that predicts aortic disease progression</div>
+                    </div>
+                </div>
+
+                {/* Subtext */}
+                <div className="text-light/70 md:text-xl text-base text-center mt-8">
+                    Enabling precise treatment decisions across the care spectrum
+                </div>
+
+                {/* Benefits Grid */}
+                <div className="grid md:grid-cols-2 gap-6 mt-16 max-w-4xl w-full">
+                    <div className="bg-white rounded-xl p-6">
+                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Better Outcomes</div>
+                        <div className="text-zinc-600 md:text-base text-sm mt-2">
+                            Precise intervention timing optimizes outcomes
                         </div>
                     </div>
-                    <div className="flex flex-col md:w-1/2 pt-8">
-                        <div className={`text-light md:text-3xl text-xl ${font_med.className}`}>
-                            Predicting patient trajectories
+                    <div className="bg-white rounded-xl p-6">
+                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Reduced Patient Leakage</div>
+                        <div className="text-zinc-600 md:text-base text-sm mt-2">
+                            Identify high-risk patients before they're lost to follow-up
                         </div>
-                        <div className="text-light md:text-2xl text-lg md:pt-4 pt-3">
-                            to improve physician decision-making and planning for courses of treatment
+                    </div>
+                    <div className="bg-white rounded-xl p-6">
+                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Smarter Resource Allocation</div>
+                        <div className="text-zinc-600 md:text-base text-sm mt-2">
+                            Prioritize limited vascular surgery capacity for patients who actually need it
                         </div>
-                        <hr className="text-light md:mt-8 mt-6"/>
-                        <div className={`text-light pt-8 md:text-3xl text-xl ${font_med.className}`}>
-                            Targeting cardiovascular diseases
+                    </div>
+                    <div className="bg-white rounded-xl p-6">
+                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Program Differentiation</div>
+                        <div className="text-zinc-600 md:text-base text-sm mt-2">
+                            Be the program that's defining the next standard of care
                         </div>
-                        <div className="text-light md:text-2xl text-lg md:pt-4 pt-3">
-                            starting with complex Type B aortic dissections, an unmet clinical need
+                    </div>
+                </div>
+
+                {/* Model Performance */}
+                <div className="mt-24 max-w-4xl w-full">
+                    <div className="text-light/70 text-center md:text-lg text-base">
+                        Our models achieve 93-95% accuracy in predicting which patients will require surgical intervention
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-6 mt-10">
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+                            <div className={`text-light md:text-4xl text-3xl ${font_head.className}`}>93-95%</div>
+                            <div className="text-light/70 mt-2">Prediction Accuracy</div>
                         </div>
-                        <hr className="text-light md:mt-8 mt-6"/>
-                        <div className={`text-light pt-8 md:text-3xl text-xl ${font_med.className}`}>
-                            Utilizing multimodal data
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+                            <div className={`text-light md:text-4xl text-3xl ${font_head.className}`}>3</div>
+                            <div className="text-light/70 mt-2">Aortic Disease Types</div>
                         </div>
-                        <div className="text-light md:text-2xl text-lg md:pt-4 pt-3">
-                            including medical images and clinical notes for richer patient representations
+                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
+                            <div className={`text-light md:text-4xl text-3xl ${font_head.className}`}>500K+</div>
+                            <div className="text-light/70 mt-2">Patients Trained On</div>
                         </div>
+                    </div>
+                </div>
+
+                {/* Institutional Backing */}
+                <div className="mt-24 max-w-3xl w-full text-center">
+                    <div className={`text-light md:text-3xl text-2xl ${font_head.className}`}>
+                        Backed by world-leading institutions
+                    </div>
+                    <div className="text-light/70 mt-4 md:text-lg text-base leading-relaxed">
+                        We're supported by top-tier accelerators and working alongside leading academic medical centers to validate and deploy our technology. Our clinical advisors include vascular surgery chiefs from institutions defining the standard of care.
                     </div>
                 </div>
             </section>
@@ -176,7 +230,7 @@ const Main = () => {
                                     Sophia Khan, MD
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    Co-Founder and CMO
+                                    Founder & CMO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Assistant Professor, Cardiothoracic and Vascular Surgery, UT Health
@@ -194,7 +248,7 @@ const Main = () => {
                                     Joe Makoid
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    Co-Founder and CEO
+                                    CEO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Prev. Digital Health Sales, Johnson & Johnson
@@ -269,7 +323,7 @@ const Main = () => {
                             Sophia Khan, MD
                         </div>
                         <div className="text-zinc-800 text-base">
-                            Co-Founder and CMO
+                            Founder & CMO
                         </div>
                         <div className="text-zinc-800 text-base pt-2">
                             Assistant Professor, Cardiothoracic and Vascular Surgery, UT Health
@@ -287,7 +341,7 @@ const Main = () => {
                             Joe Makoid
                         </div>
                         <div className="text-zinc-800 text-base">
-                            Co-Founder and CEO
+                            CEO
                         </div>
                         <div className="text-zinc-800 text-base pt-2">
                             Prev. Digital Health Sales, Johnson & Johnson
