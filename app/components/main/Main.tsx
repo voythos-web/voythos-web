@@ -147,7 +147,7 @@ const Main = () => {
                 {/* Model Performance */}
                 <div className="mt-24 max-w-4xl w-full">
                     <div className="text-light/70 text-center md:text-lg text-base">
-                        Our models achieve 93-95% accuracy in predicting which patients will require surgical intervention
+                        Our models achieve 93-95% accuracy in predicting which patients will undergo surgical intervention
                     </div>
                     <div className="grid md:grid-cols-3 gap-6 mt-10">
                         <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
