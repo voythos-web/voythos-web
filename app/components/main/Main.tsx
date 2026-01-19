@@ -230,7 +230,7 @@ const Main = () => {
                                     Sophia Khan, MD
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    Founder & CMO
+                                    Co-Founder and CMO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Assistant Professor, Cardiothoracic and Vascular Surgery, UT Health
@@ -248,7 +248,7 @@ const Main = () => {
                                     Joe Makoid
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    CEO
+                                    Co-Founder and CEO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Prev. Digital Health Sales, Johnson & Johnson
@@ -323,7 +323,7 @@ const Main = () => {
                             Sophia Khan, MD
                         </div>
                         <div className="text-zinc-800 text-base">
-                            Founder & CMO
+                            Co-Founder and CMO
                         </div>
                         <div className="text-zinc-800 text-base pt-2">
                             Assistant Professor, Cardiothoracic and Vascular Surgery, UT Health
@@ -341,7 +341,7 @@ const Main = () => {
                             Joe Makoid
                         </div>
                         <div className="text-zinc-800 text-base">
-                            CEO
+                            Co-Founder and CEO
                         </div>
                         <div className="text-zinc-800 text-base pt-2">
                             Prev. Digital Health Sales, Johnson & Johnson
