@@ -78,7 +78,7 @@ const Main = () => {
                             We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
                         </div>
                     </div>
-                    <div className="relative h-[250px] scale-[0.6] origin-top translate-x-12 mt-4">
+                    <div className="relative h-[320px] scale-[0.8] origin-top translate-x-2 mt-4">
                         <ParticleAorta />
                     </div>
                     <div className="pt-2">
@@ -229,12 +229,12 @@ const Main = () => {
                         Join our team
                     </Link>
                 </div>
-                <div className="hidden md:flex flex-col mt-12 w-full max-w-[1200px] mx-auto">
+                <div className="flex flex-col mt-12 w-full max-w-[1200px] mx-auto">
                     <div className="flex flex-col w-full">
                         <div className="text-zinc-800 text-xl">
                             Leadership
                         </div>
-                        <div className="grid grid-cols-[repeat(3,minmax(220px,220px))] gap-10 pt-5 justify-start">
+                        <div className="grid grid-cols-2 md:grid-cols-[repeat(3,minmax(220px,220px))] gap-6 md:gap-10 pt-5 justify-start">
                             <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/sophia.svg'
@@ -293,8 +293,8 @@ const Main = () => {
                         <div className="text-zinc-800 text-xl pt-12">
                             Clinical Advisors
                         </div>
-                        <div className="grid grid-cols-[repeat(2,minmax(220px,220px))] gap-10 pt-5 justify-start">
-                            <div className="flex flex-col w-[220px]">
+                        <div className="grid grid-cols-2 md:grid-cols-[repeat(2,minmax(220px,220px))] gap-6 md:gap-10 pt-5 justify-start">
+                            <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/oderich.svg'
                                     alt="Gustavo Oderich, MD"
@@ -309,7 +309,7 @@ const Main = () => {
                                     Chief, Division of Vascular Surgery and Endovascular Therapy, Baylor College of Medicine
                                 </div>
                             </div>
-                            <div className="flex flex-col w-[220px]">
+                            <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/milner.svg'
                                     alt="Ross Milner, MD"
@@ -324,97 +324,6 @@ const Main = () => {
                                     Chief, Section of Vascular Surgery and Endovascular Therapy, The University of Chicago Medicine
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="md:hidden flex flex-row pt-4 justify-between px-3">
-                    <div className="flex flex-col w-[150px]">
-                        <Image 
-                            src='/images/about/sophia.svg'
-                            alt="Sophia Khan"
-                            height={200}
-                            width={200}
-                            className="bg-cover"
-                        />
-                        <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
-                            Sophia Khan, MD
-                        </div>
-                        <div className="text-zinc-800 text-base">
-                            Co-Founder and CMO
-                        </div>
-                        <div className="text-zinc-800 text-base pt-2">
-                            Assistant Professor, Cardiothoracic and Vascular Surgery, UT Health
-                        </div>
-                    </div>
-                    <div className="flex flex-col w-[150px]">
-                        <Image 
-                            src='/images/about/joe.svg'
-                            alt="Joe Makoid"
-                            height={200}
-                            width={200}
-                            className="bg-cover"
-                        />
-                        <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
-                            Joe Makoid
-                        </div>
-                        <div className="text-zinc-800 text-base">
-                            Co-Founder and CEO
-                        </div>
-                        <div className="text-zinc-800 text-base pt-2">
-                            Prev. Digital Health Sales, Johnson & Johnson
-                        </div>
-                    </div>
-                </div>
-                <div className="md:hidden flex flex-col mt-5 w-[150px] mx-3">
-                    <Image 
-                        src='/images/about/jordan.svg'
-                        alt="Jordan Graves"
-                        height={200}
-                        width={200}
-                        className="bg-cover"
-                    />
-                    <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
-                        Jordan Graves
-                    </div>
-                    <div className="text-zinc-800 text-base">
-                        CTO
-                    </div>
-                    <div className="text-zinc-800 text-base pt-2">
-                        Prev. Medical AI/ML Development
-                    </div>
-                </div>
-                <div className="md:hidden text-zinc-800 text-xl pt-8 px-3">
-                    Clinical Advisors
-                </div>
-                <div className="md:hidden flex flex-row pt-4 justify-between px-3">
-                    <div className="flex flex-col w-[150px]">
-                        <Image 
-                            src='/images/about/oderich.svg'
-                            alt="Gustavo Oderich, MD"
-                            height={200}
-                            width={200}
-                            className="bg-cover"
-                        />
-                        <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
-                            Gustavo Oderich, MD
-                        </div>
-                        <div className="text-zinc-800 text-base pt-2">
-                            Chief, Division of Vascular Surgery and Endovascular Therapy, Baylor College of Medicine
-                        </div>
-                    </div>
-                    <div className="flex flex-col w-[150px]">
-                        <Image 
-                            src='/images/about/milner.svg'
-                            alt="Ross Milner, MD"
-                            height={200}
-                            width={200}
-                            className="bg-cover"
-                        />
-                        <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
-                            Ross Milner, MD
-                        </div>
-                        <div className="text-zinc-800 text-base pt-2">
-                            Chief, Section of Vascular Surgery and Endovascular Therapy, The University of Chicago Medicine
                         </div>
                     </div>
                 </div>
