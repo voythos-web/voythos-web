@@ -43,17 +43,18 @@ const Main = () => {
                     items-center
                     px-8
                     md:px-0
+                    md:pt-12
                 "
             >
-                <div className="flex md:flex-row flex-col md:items-center md:justify-between w-full max-w-[1440px] md:gap-8">
-                    <div className="flex flex-col md:w-[52%] md:pl-20">
-                        <div className={`text-indigo-50 md:text-8xl/22 text-5xl ${font_head.className}`}>
+                <div className="hidden md:grid md:grid-cols-[1fr_1fr] md:items-center w-full max-w-[1440px] md:gap-10">
+                    <div className="flex flex-col md:pl-20 md:pt-20 max-w-[700px]">
+                        <div className={`text-indigo-50 md:text-7xl/18 lg:text-8xl/20 text-5xl ${font_head.className}`}>
                             Transforming the delivery of aortic care.
                         </div>
-                        <div className="hidden md:block text-indigo-50 text-xl pt-4 pr-16">
+                        <div className="text-indigo-50 text-xl pt-4 pr-16">
                             We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
                         </div>
-                        <div className="pt-6 hidden md:block">
+                        <div className="pt-6">
                             <Button 
                                 href="#solutions"
                                 text="Discover our solutions"
@@ -61,14 +62,31 @@ const Main = () => {
                             />
                         </div>
                     </div>
-                    <div className="hidden md:flex md:w-[48%] h-[70vh] items-center justify-center overflow-hidden">
+                    <div className="flex items-center justify-start h-[72vh] min-h-[520px] w-full max-w-[640px] justify-self-start">
+                        <div className="w-full h-full md:scale-105 origin-center -translate-x-8">
+                            <ParticleAorta />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="md:hidden w-full">
+                    <div className="flex flex-col">
+                        <div className={`text-indigo-50 text-5xl ${font_head.className}`}>
+                            Transforming the delivery of aortic care.
+                        </div>
+                        <div className={`text-indigo-50 text-xl pt-4 ${font_med.className}`}>
+                            We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
+                        </div>
+                    </div>
+                    <div className="relative h-[250px] scale-[0.6] origin-top translate-x-12 mt-4">
                         <ParticleAorta />
                     </div>
-                    <div className="md:hidden relative h-[250px] scale-[0.6] origin-top translate-x-12 mt-4">
-                        <ParticleAorta />
-                    </div>
-                    <div className={`md:hidden text-indigo-50 text-xl pt-4 ${font_med.className}`}>
-                        We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
+                    <div className="pt-2">
+                        <Button 
+                            href="#solutions"
+                            text="Discover our solutions"
+                            outline
+                        />
                     </div>
                 </div>
             </section>
@@ -216,7 +234,7 @@ const Main = () => {
                         <div className="text-zinc-800 text-xl">
                             Leadership
                         </div>
-                        <div className="grid md:grid-cols-3 gap-10 pt-5">
+                        <div className="grid grid-cols-[repeat(3,minmax(220px,220px))] gap-10 pt-5 justify-start">
                             <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/sophia.svg'
@@ -275,7 +293,7 @@ const Main = () => {
                         <div className="text-zinc-800 text-xl pt-12">
                             Clinical Advisors
                         </div>
-                        <div className="grid md:grid-cols-2 gap-10 pt-5 max-w-[470px]">
+                        <div className="grid grid-cols-[repeat(2,minmax(220px,220px))] gap-10 pt-5 justify-start">
                             <div className="flex flex-col w-[220px]">
                                 <Image 
                                     src='/images/about/oderich.svg'
