@@ -78,15 +78,8 @@ const Main = () => {
                             We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
                         </div>
                     </div>
-                    <div className="relative h-[320px] scale-[0.8] origin-top translate-x-2 mt-4">
+                    <div className="relative h-[380px] scale-[0.95] origin-top translate-x-2 mt-16">
                         <ParticleAorta />
-                    </div>
-                    <div className="pt-2">
-                        <Button 
-                            href="#solutions"
-                            text="Discover our solutions"
-                            outline
-                        />
                     </div>
                 </div>
             </section>
@@ -116,7 +109,7 @@ const Main = () => {
                 {/* The Equation */}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-light text-center">
-                        <div className={`md:text-xl text-base ${font_med.className}`}>Longitudinal Patient Data</div>
+                        <div className={`md:text-xl text-base ${font_med.className}`}>Multimodal Patient Data</div>
                     </div>
                     <div className={`text-light md:text-4xl text-2xl ${font_head.className}`}>+</div>
                     <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-light text-center">
