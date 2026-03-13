@@ -113,7 +113,7 @@ function AortaParticles() {
 
 export default function ParticleAorta() {
     return (
-        <div style={{ width: '100%', height: '100vh' }}>
+        <div style={{ width: '100%', height: '100%' }}>
             <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
                 <ambientLight intensity={0.5}/>
                 <Environment preset='sunset'/>

@@ -35,7 +35,6 @@ const Main = () => {
                 className="
                     bg-[url('/images/backgrounds/grid_bg_blue.png')]
                     bg-cover
-                    md:h-screen
                     min-h-screen
                     w-screen
                     flex
@@ -46,8 +45,8 @@ const Main = () => {
                     md:px-0
                 "
             >
-                <div className="flex md:flex-row flex-col md:items-center md:justify-center">
-                    <div className="flex flex-col md:w-1/2 md:pl-20">
+                <div className="flex md:flex-row flex-col md:items-center md:justify-between w-full max-w-[1440px] md:gap-8">
+                    <div className="flex flex-col md:w-[52%] md:pl-20">
                         <div className={`text-indigo-50 md:text-8xl/22 text-5xl ${font_head.className}`}>
                             Transforming the delivery of aortic care.
                         </div>
@@ -62,7 +61,7 @@ const Main = () => {
                             />
                         </div>
                     </div>
-                    <div className="hidden md:block w-1/2">
+                    <div className="hidden md:flex md:w-[48%] h-[70vh] items-center justify-center overflow-hidden">
                         <ParticleAorta />
                     </div>
                     <div className="md:hidden relative h-[250px] scale-[0.6] origin-top translate-x-12 mt-4">
@@ -212,12 +211,12 @@ const Main = () => {
                         Join our team
                     </Link>
                 </div>
-                <div className="hidden md:flex flex-col items-center justify-center mt-12">
-                    <div className="flex flex-col md:w-1/2">
+                <div className="hidden md:flex flex-col mt-12 w-full max-w-[1200px] mx-auto">
+                    <div className="flex flex-col w-full">
                         <div className="text-zinc-800 text-xl">
                             Leadership
                         </div>
-                        <div className="flex flex-row md:gap-10 justify-between md:justify-normal pt-5">
+                        <div className="grid md:grid-cols-3 gap-10 pt-5">
                             <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/sophia.svg'
@@ -254,7 +253,7 @@ const Main = () => {
                                     Prev. Digital Health Sales, Johnson & Johnson
                                 </div>
                             </div>
-                            <div className="hidden md:flex flex-col w-[220px]">
+                            <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/jordan.svg'
                                     alt="Jordan Graves"
@@ -276,7 +275,7 @@ const Main = () => {
                         <div className="text-zinc-800 text-xl pt-12">
                             Clinical Advisors
                         </div>
-                        <div className="flex flex-row gap-10 pt-5">
+                        <div className="grid md:grid-cols-2 gap-10 pt-5 max-w-[470px]">
                             <div className="flex flex-col w-[220px]">
                                 <Image 
                                     src='/images/about/oderich.svg'
