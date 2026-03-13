@@ -514,7 +514,7 @@ const Main = () => {
                     News & Insights
                 </div>
                 <div className="flex flex-col">
-                    <div className="flex md:flex-row flex-col md:justify-between gap-10 items-center md:pt-10 pt-12 px-2">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch md:pt-10 pt-12 px-2">
                         <NewsMain 
                             text="Voythos featured in Mayo Clinic Platform_Accelerate showcase"
                             date="May 2025"

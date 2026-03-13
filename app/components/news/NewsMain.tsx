@@ -19,21 +19,23 @@ const NewsMain: React.FC<NewsMainProps> = ({
 }) => {
     return (
         <div className="
-            md:w-1/3 
             w-full
             md:h-80
-            h-72 
+            h-72
             relative 
             border 
             border-light 
             pt-8 
-            pl-10 
+            pl-6
+            md:pl-10
+            pr-6
+            md:pr-0
             flex 
             flex-col 
             justify-between
         ">
             <div>
-                <div className={`md:text-2xl text-xl text-light md:pr-5 pr-10 ${font_head.className}`}>
+                <div className={`md:text-2xl text-xl text-light md:pr-5 ${font_head.className}`}>
                     {text}
                 </div>
                 <div className={`text-lg text-light pt-4 ${font_med.className}`}>
