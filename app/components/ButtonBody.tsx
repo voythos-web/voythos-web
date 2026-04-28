@@ -14,22 +14,25 @@ const ButtonBody: React.FC<ButtonBodyProps> = ({
     colorprimary
 }) => {
     return (
-        <button className=
-            {`
-                text-lg 
-                py-1.5 
-                px-4 
-                cursor-pointer 
-                transition 
-                duration-200 
-                ease-in 
+        <a
+            href={href}
+            rel="noopener noreferrer"
+            target="_blank"
+            className={`
+                inline-block
+                text-lg
+                py-1.5
+                px-4
+                cursor-pointer
+                transition
+                duration-200
+                ease-in
                 ${colorprimary ? 'bg-primary text-light hover:bg-primary/65' : 'bg-light text-zinc-800 hover:bg-light/75 hover:outline hover:outline-light'}
                 ${font_med.className}
-            `}>
-            <a href={href} rel="noopener noreferrer" target="_blank">
-                {text}
-            </a>
-        </button>
+            `}
+        >
+            {text}
+        </a>
     );
 }
 

@@ -32,7 +32,7 @@ const ContactClient = () => {
                         Mailing list
                     </div>
                     <div className="pt-4"> 
-                        <ButtonBody href="https://docs.google.com/forms/d/e/1FAIpQLSd8kkC_em8eWR-PVIe1ckIaLl554jwQlTNfa8JImJRb-pRp2A/viewform?usp=dialog" text="Sign up here" colorprimary/>
+                        <ButtonBody href="https://forms.gle/ffunLa744mqaPy4Z9" text="Sign up here" colorprimary/>
                     </div>
                     <div className={`text-zinc-800 pt-10 md:text-3xl text-2xl`}>
                         Connect with us
