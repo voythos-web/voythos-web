@@ -26,7 +26,7 @@ const ContactClient = () => {
                         Email
                     </div>
                     <div className="pt-4"> 
-                        <ButtonBody href="mailto:joe@voythos.io" text="Send us a message" colorprimary/>
+                        <ButtonBody href="mailto:joe@voythos.ai" text="Send us a message" colorprimary/>
                     </div>
                     <div className={`text-zinc-800 pt-10 md:text-3xl text-2xl`}>
                         Mailing list
