@@ -508,22 +508,22 @@ const Main = () => {
                 </div>
                 <div className="flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch md:pt-10 pt-12 px-2">
-                        <NewsMain 
+                        <NewsMain
+                            text="Voythos presents at the 2026 MedTech Innovator Radar Forum"
+                            date="April 2026"
+                            href="/news/Apr-9-26"
+                            buttontext="Read more"
+                        />
+                        <NewsMain
                             text="Voythos featured in Mayo Clinic Platform_Accelerate showcase"
                             date="May 2025"
                             href="/news/May-3-25"
                             buttontext="Read more"
                         />
-                        <NewsMain 
+                        <NewsMain
                             text="Voythos CEO interviewed on Forging the Future podcast for use of AI in transforming cardiovascular disease prediction"
                             date="April 2025"
                             href="/news/Apr-18-25"
-                            buttontext="Read more"
-                        />
-                        <NewsMain 
-                            text="Voythos joins Northwestern Medicine and Techstars Healthcare Accelerator"
-                            date="March 2025"
-                            href="/news/Mar-20-25"
                             buttontext="Read more"
                         />
                     </div>
