@@ -24,11 +24,16 @@ const NewsClient = () => {
                         href="/news/Apr-9-26"
                     />
                     <NewsCard
+                        text="Voythos pitches at Techstars Northwestern Medicine Demo Day"
+                        date="June 3, 2025"
+                        href="/news/Jun-3-25"
+                    />
+                    <NewsCard
                         text="Voythos featured in Mayo Clinic Platform_ Accelerate showcase"
                         date="May 3, 2025"
                         href="/news/May-3-25"
                     />
-                    <NewsCard 
+                    <NewsCard
                         text="Voythos CEO interviewed on Forging the Future podcast for use of AI in transforming cardiovascular disease prediction"
                         date="April 18, 2025"
                         href="/news/Apr-18-25"

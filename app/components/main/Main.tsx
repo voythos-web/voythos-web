@@ -515,15 +515,15 @@ const Main = () => {
                             buttontext="Read more"
                         />
                         <NewsMain
-                            text="Voythos featured in Mayo Clinic Platform_Accelerate showcase"
-                            date="May 2025"
-                            href="/news/May-3-25"
+                            text="Voythos pitches at Techstars Northwestern Medicine Demo Day"
+                            date="June 2025"
+                            href="/news/Jun-3-25"
                             buttontext="Read more"
                         />
                         <NewsMain
-                            text="Voythos CEO interviewed on Forging the Future podcast for use of AI in transforming cardiovascular disease prediction"
-                            date="April 2025"
-                            href="/news/Apr-18-25"
+                            text="Voythos featured in Mayo Clinic Platform_Accelerate showcase"
+                            date="May 2025"
+                            href="/news/May-3-25"
                             buttontext="Read more"
                         />
                     </div>
