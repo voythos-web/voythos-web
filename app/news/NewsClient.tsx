@@ -18,7 +18,12 @@ const NewsClient = () => {
                 </div>
                 <hr className="text-zinc-500 mt-4"/>
                 <div className="grid md:grid-cols-3 grid-cols-1 md:gap-8 gap-4 mt-8 max-w-full mb-10">
-                    <NewsCard 
+                    <NewsCard
+                        text="Voythos presents at the 2026 MedTech Innovator Radar Forum"
+                        date="April 9, 2026"
+                        href="/news/Apr-9-26"
+                    />
+                    <NewsCard
                         text="Voythos featured in Mayo Clinic Platform_ Accelerate showcase"
                         date="May 3, 2025"
                         href="/news/May-3-25"
