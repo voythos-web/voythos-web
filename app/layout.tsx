@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { font_body } from "./fonts";
 import Navbar from "./components/nav/Navbar";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Voythos | Transforming the delivery of aortic care.",
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Navbar />
         </div>
         {children}
+        <Footer />
       </body>
     </html>
   );
