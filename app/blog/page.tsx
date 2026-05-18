@@ -41,6 +41,7 @@ const BlogIndex = () => {
                                 excerpt={p.excerpt}
                                 href={`/blog/${p.slug}`}
                                 cover={p.cover}
+                                coverComponent={p.coverComponent}
                             />
                         ))}
                     </div>

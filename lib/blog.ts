@@ -8,6 +8,7 @@ export interface BlogPostMeta {
     date: string;
     excerpt: string;
     cover?: string;
+    coverComponent?: string; // named React component cover (alternative to a static image)
     author?: string;
 }
 
@@ -28,6 +29,7 @@ function readPost(filename: string): BlogPost {
         date: String(data.date ?? ""),
         excerpt: String(data.excerpt ?? ""),
         cover: data.cover ? String(data.cover) : undefined,
+        coverComponent: data.coverComponent ? String(data.coverComponent) : undefined,
         author: data.author ? String(data.author) : undefined,
         content,
     };
