@@ -1,6 +1,7 @@
 import { font_head, font_med } from "@/app/fonts";
 import Image from "next/image";
 import Link from "next/link";
+import { COVER_COMPONENTS } from "./covers";
 
 interface BlogCardProps {
     title: string;
@@ -8,9 +9,11 @@ interface BlogCardProps {
     excerpt: string;
     href: string;
     cover?: string;
+    coverComponent?: string;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ title, date, excerpt, href, cover }) => {
+const BlogCard: React.FC<BlogCardProps> = ({ title, date, excerpt, href, cover, coverComponent }) => {
+    const CoverComponent = coverComponent ? COVER_COMPONENTS[coverComponent] : undefined;
     return (
         <Link
             href={href}
@@ -31,7 +34,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, date, excerpt, href, cover }
                 overflow-hidden
             "
         >
-            {cover && (
+            {CoverComponent ? (
+                <div className="relative w-full overflow-hidden">
+                    <div className="group-hover:scale-105 transition duration-300 ease-in">
+                        <CoverComponent />
+                    </div>
+                </div>
+            ) : cover ? (
                 <div className="relative w-full aspect-[3/2] overflow-hidden">
                     <Image
                         src={cover}
@@ -41,7 +50,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ title, date, excerpt, href, cover }
                         className="object-cover group-hover:scale-105 transition duration-300 ease-in"
                     />
                 </div>
-            )}
+            ) : null}
             <div className="flex flex-col justify-between flex-1 md:pt-6 pt-4 md:pl-10 md:pr-10 px-4 md:pb-8 pb-6">
                 <div>
                     <div

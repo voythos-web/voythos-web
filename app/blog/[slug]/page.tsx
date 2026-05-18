@@ -83,6 +83,7 @@ const BlogPostPage = async ({ params }: PageProps) => {
                 title={post.title}
                 date={formatDate(post.date)}
                 cover={post.cover}
+                coverComponent={post.coverComponent}
                 author={post.author}
                 content={post.content}
             />

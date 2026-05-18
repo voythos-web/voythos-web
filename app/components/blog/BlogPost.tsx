@@ -4,11 +4,13 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { MdKeyboardArrowLeft } from "react-icons/md";
+import { COVER_COMPONENTS } from "./covers";
 
 interface BlogPostProps {
     title: string;
     date: string;
     cover?: string;
+    coverComponent?: string;
     author?: string;
     content: string;
 }
@@ -17,9 +19,11 @@ const BlogPostView: React.FC<BlogPostProps> = ({
     title,
     date,
     cover,
+    coverComponent,
     author,
     content,
 }) => {
+    const CoverComponent = coverComponent ? COVER_COMPONENTS[coverComponent] : undefined;
     return (
         <article className="flex flex-col md:mt-32 mt-24 md:mx-64 mx-4 md:pb-16 pb-8">
             <div className="text-xl text-zinc-800">{date}</div>
@@ -34,7 +38,11 @@ const BlogPostView: React.FC<BlogPostProps> = ({
                 </div>
             )}
 
-            {cover && (
+            {CoverComponent ? (
+                <div className="pt-10 w-full">
+                    <CoverComponent />
+                </div>
+            ) : cover ? (
                 <div className="pt-10 w-full">
                     <Image
                         src={cover}
@@ -46,7 +54,7 @@ const BlogPostView: React.FC<BlogPostProps> = ({
                         priority
                     />
                 </div>
-            )}
+            ) : null}
 
             <div
                 className={`pt-10 md:text-xl text-lg text-zinc-800 ${font_med.className}`}
