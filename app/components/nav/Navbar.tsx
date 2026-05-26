@@ -85,8 +85,28 @@ const Navbar = () => {
                 <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled}>News</NavItem>
             </div>
 
-            {/* desktop contact */}
-            <div className="hidden md:flex">
+            {/* desktop sign in + contact */}
+            <div className="hidden md:flex flex-row gap-4 items-center">
+                <a
+                    href="https://app.voythos.io/"
+                    rel="noopener noreferrer"
+                    className={`
+                        tracking-wider
+                        transition-colors
+                        duration-200
+                        px-4
+                        py-1.5
+                        text-base
+                        cursor-pointer
+                        bg-none
+                        hover:bg-light/20
+                        ease-in
+                        ${isScrolled ? 'text-zinc-800 hover:bg-primary/10' : 'text-indigo-50 hover:bg-indigo-50/20'}
+                        ${font_med.className}
+                    `}
+                >
+                    Sign in / Sign up
+                </a>
                 <Button href="/contact" text="Contact us" isScrolled={isScrolled}/>
             </div>
 
@@ -166,6 +186,29 @@ const Navbar = () => {
                         <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled} onClick={() => setIsMenuOpen(false)}>News</NavItem>
                         <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
                     </div>
+                    <hr className="mx-4 text-zinc-300"/>
+
+                    <a
+                        href="https://app.voythos.io/"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMenuOpen(false)}
+                        className="flex flex-row justify-between pr-4 group"
+                    >
+                        <span
+                            className={`
+                                tracking-wider
+                                px-4
+                                py-1.5
+                                text-xl
+                                text-zinc-800
+                                cursor-pointer
+                                ${font_med.className}
+                            `}
+                        >
+                            Sign in / Sign&nbsp;up
+                        </span>
+                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
+                    </a>
                     <hr className="mx-4 text-zinc-300"/>
 
                     <div className="w-full px-4" onClick={() => setIsMenuOpen(false)}>
