@@ -21,7 +21,7 @@ const Footer = () => {
                 </Link>
 
                 <nav className="flex md:flex-row flex-col md:flex-wrap md:items-center md:gap-6 gap-3 md:text-base text-lg">
-                    <Link href="/#solutions" className="hover:opacity-60 transition duration-200">
+                    <Link href="/solutions" className="hover:opacity-60 transition duration-200">
                         Solutions
                     </Link>
                     <Link href="/#company" className="hover:opacity-60 transition duration-200">
