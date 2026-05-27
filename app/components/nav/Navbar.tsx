@@ -80,7 +80,7 @@ const Navbar = () => {
 
             {/* desktop nav */}
             <div className="hidden md:flex flex-row gap-4">
-                <NavItem href="/#solutions" currentPage={pathname} isScrolled={isScrolled}>Solutions</NavItem>
+                <NavItem href="/solutions" currentPage={pathname} isScrolled={isScrolled}>Solutions</NavItem>
                 <NavItem href="/#company" currentPage={pathname} isScrolled={isScrolled}>Company</NavItem>
                 <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled}>News</NavItem>
             </div>
@@ -105,7 +105,7 @@ const Navbar = () => {
                         ${font_med.className}
                     `}
                 >
-                    Sign in / Sign up
+                    Try the preview
                 </a>
                 <Button href="/contact" text="Contact us" isScrolled={isScrolled}/>
             </div>
@@ -138,20 +138,16 @@ const Navbar = () => {
                         md:hidden
                     `}
                 >
-                    <div className="flex flex-row justify-between pr-4 group" 
+                    <div className="flex flex-row justify-between pr-4 group"
                     onClick={() => {
-                        router.push('/#solutions');
+                        router.push('/solutions');
                         setIsMenuOpen(false);
                     }}>
-                        <NavItem 
-                            href="/#solutions" 
-                            currentPage={pathname} 
-                            isScrolled={isScrolled} 
-                            onClick={() => {
-                                localStorage.setItem('scrollTarget', 'solutions');
-                                setIsMenuOpen(false);
-                                router.push('/');
-                            }}
+                        <NavItem
+                            href="/solutions"
+                            currentPage={pathname}
+                            isScrolled={isScrolled}
+                            onClick={() => setIsMenuOpen(false)}
                         >
                             Solutions
                         </NavItem>

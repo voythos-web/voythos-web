@@ -84,13 +84,12 @@ const Main = () => {
                 </div>
             </section>
 
-            {/* solutions */}
+            {/* solutions — teaser, full content lives at /solutions */}
             <section
                 id="solutions"
                 className="
                     bg-[url('/images/backgrounds/wave_bg.png')]
                     bg-cover
-                    min-h-screen
                     w-screen
                     flex
                     flex-col
@@ -98,91 +97,52 @@ const Main = () => {
                     items-center
                     md:px-20
                     px-4
+                    md:py-32
                     py-20
                 "
             >
-                {/* Hero Statement */}
-                <div className={`text-light md:text-6xl text-3xl text-center max-w-4xl ${font_head.className}`}>
-                    We predict which patients will progress.
+                <div className={`text-light md:text-5xl text-3xl text-center max-w-4xl ${font_head.className}`}>
+                    Predict the trajectory of aortic disease. For one patient or
+                    your entire program.
                 </div>
 
-                {/* The Equation */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-16">
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-light text-center">
-                        <div className={`md:text-xl text-base ${font_med.className}`}>Multimodal Patient Data</div>
-                    </div>
-                    <div className={`text-light md:text-4xl text-2xl ${font_head.className}`}>+</div>
-                    <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-6 py-4 text-light text-center">
-                        <div className={`md:text-xl text-base ${font_med.className}`}>Advanced AI Modeling</div>
-                    </div>
-                    <div className={`text-light md:text-4xl text-2xl ${font_head.className}`}>=</div>
-                    <div className="bg-primary/80 backdrop-blur-sm border border-primary rounded-2xl px-6 py-4 text-light text-center">
-                        <div className={`md:text-xl text-base ${font_med.className}`}>The first platform that predicts aortic disease progression</div>
-                    </div>
-                </div>
-
-                {/* Subtext */}
-                <div className="text-light/70 md:text-xl text-base text-center mt-8">
-                    Enabling precise treatment decisions across the care spectrum
-                </div>
-
-                {/* Benefits Grid */}
-                <div className="grid md:grid-cols-2 gap-6 mt-16 max-w-4xl w-full">
-                    <div className="bg-white rounded-xl p-6">
-                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Better Outcomes</div>
-                        <div className="text-zinc-600 md:text-base text-sm mt-2">
-                            Precise intervention timing optimizes outcomes
+                {/* two-tier teaser */}
+                <div className="grid md:grid-cols-2 gap-6 md:mt-16 mt-12 max-w-4xl w-full">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col">
+                        <div className={`text-light/60 md:text-base text-sm tracking-[0.25em] font-mono`}>
+                            PREVIEW
+                        </div>
+                        <div className={`text-light md:text-2xl text-xl pt-2 ${font_head.className}`}>
+                            Try the experience
+                        </div>
+                        <div className="text-light/85 md:text-base text-sm pt-3">
+                            A pared-down version of our models, on a simplified
+                            variable set you can enter manually. See how
+                            trajectory modeling works. Free.
                         </div>
                     </div>
-                    <div className="bg-white rounded-xl p-6">
-                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Reduced Patient Leakage</div>
-                        <div className="text-zinc-600 md:text-base text-sm mt-2">
-                            Identify high-risk patients before they're lost to follow-up
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col">
+                        <div className={`text-light/60 md:text-base text-sm tracking-[0.25em] font-mono`}>
+                            ENTERPRISE
                         </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-6">
-                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Smarter Resource Allocation</div>
-                        <div className="text-zinc-600 md:text-base text-sm mt-2">
-                            Prioritize limited vascular surgery capacity for patients who actually need it
+                        <div className={`text-light md:text-2xl text-xl pt-2 ${font_head.className}`}>
+                            The full platform
                         </div>
-                    </div>
-                    <div className="bg-white rounded-xl p-6">
-                        <div className={`text-zinc-800 md:text-xl text-lg ${font_med.className}`}>Program Differentiation</div>
-                        <div className="text-zinc-600 md:text-base text-sm mt-2">
-                            Be the program that's defining the next standard of care
+                        <div className="text-light/85 md:text-base text-sm pt-3">
+                            Full EHR integration runs our complete models on
+                            hundreds of clinical variables. Workflow tooling for
+                            screening, incidental findings, and surveillance.
                         </div>
                     </div>
                 </div>
 
-                {/* Model Performance */}
-                <div className="mt-24 max-w-4xl w-full">
-                    <div className="text-light/70 text-center md:text-lg text-base">
-                        Our models achieve 93-95% accuracy in predicting which patients will undergo surgical intervention
-                    </div>
-                    <div className="grid md:grid-cols-3 gap-6 mt-10">
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
-                            <div className={`text-light md:text-4xl text-3xl ${font_head.className}`}>93-95%</div>
-                            <div className="text-light/70 mt-2">Prediction Accuracy</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
-                            <div className={`text-light md:text-4xl text-3xl ${font_head.className}`}>3</div>
-                            <div className="text-light/70 mt-2">Aortic Disease Types</div>
-                        </div>
-                        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center">
-                            <div className={`text-light md:text-4xl text-3xl ${font_head.className}`}>500K+</div>
-                            <div className="text-light/70 mt-2">Patients Trained On</div>
-                        </div>
-                    </div>
+                <div className="text-light/70 md:text-base text-sm text-center md:mt-12 mt-8 max-w-2xl">
+                    Trained on 500,000+ longitudinal patient records. Backed by
+                    Mayo Clinic and Northwestern Medicine.
                 </div>
 
-                {/* Institutional Backing */}
-                <div className="mt-24 max-w-3xl w-full text-center">
-                    <div className={`text-light md:text-3xl text-2xl ${font_head.className}`}>
-                        Backed by world-leading institutions
-                    </div>
-                    <div className="text-light/70 mt-4 md:text-lg text-base leading-relaxed">
-                        We're supported by top-tier accelerators and working alongside leading academic medical centers to validate and deploy our technology. Our clinical advisors include vascular surgery chiefs from institutions defining the standard of care.
-                    </div>
+                <div className="md:mt-10 mt-8">
+                    <Button href="/solutions" text="See our solutions" />
                 </div>
             </section>
 
