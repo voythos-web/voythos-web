@@ -68,45 +68,52 @@ const Navbar = () => {
                 ${isScrolled ? 'bg-slate-50 text-zinc-800' : 'bg-none text-indigo-50'}
             `}
         >
-            {/* logo */}
-            <Image 
-                onClick={() => router.push('/')}
-                alt="Logo"
-                className="cursor-pointer transition-all duration-300 w-[200px]"
-                height='200'
-                width='200'
-                src={isScrolled ? '/images/logo_blue_2.svg' : '/images/logo_light_2.svg'}
-            />
+            {/* logo — wrapped in Link so it's a proper navigation anchor (accessibility + right-click works) */}
+            <Link href="/" className="flex-shrink-0" aria-label="Voythos home">
+                <Image
+                    alt="Voythos"
+                    className="cursor-pointer transition-all duration-300 w-[200px]"
+                    height='200'
+                    width='200'
+                    src={isScrolled ? '/images/logo_blue_2.svg' : '/images/logo_light_2.svg'}
+                />
+            </Link>
 
             {/* desktop nav */}
-            <div className="hidden md:flex flex-row gap-4">
-                <NavItem href="/solutions" currentPage={pathname} isScrolled={isScrolled}>Solutions</NavItem>
+            <div className="hidden md:flex flex-row gap-4 items-center">
+                {/* Solutions with dropdown */}
+                <div className="relative group">
+                    <NavItem href="/solutions" currentPage={pathname} isScrolled={isScrolled}>Solutions</NavItem>
+                    {/* dropdown (pt-2 inside the wrapper creates a hover bridge between the nav item and the menu) */}
+                    <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 z-20">
+                        <div className="bg-slate-50 border border-zinc-200 shadow-lg min-w-[300px]">
+                            <Link href="/solutions" className="block px-5 py-4 hover:bg-light/30 transition duration-150">
+                                <div className={`text-zinc-800 ${font_med.className}`}>AortaNavigator</div>
+                                <div className="text-zinc-600 text-sm pt-0.5">Predictive intelligence for AAA, TBAD, TAA</div>
+                            </Link>
+                            <Link href="/rvupilot" className="block px-5 py-4 hover:bg-light/30 transition duration-150 border-t border-zinc-200">
+                                <div className={`text-zinc-800 ${font_med.className}`}>
+                                    RVUPilot
+                                    <span className="text-primary text-xs tracking-[0.2em] font-mono ml-2 align-middle">BETA</span>
+                                </div>
+                                <div className="text-zinc-600 text-sm pt-0.5">Real-time RVU coding for surgeons</div>
+                            </Link>
+                            <Link href="/pythia" className="block px-5 py-4 hover:bg-light/30 transition duration-150 border-t border-zinc-200">
+                                <div className={`text-zinc-800 ${font_med.className}`}>
+                                    Pythia
+                                    <span className="text-primary text-xs tracking-[0.2em] font-mono ml-2 align-middle">IN DEV</span>
+                                </div>
+                                <div className="text-zinc-600 text-sm pt-0.5">A frontier model for the entire aorta</div>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
                 <NavItem href="/#company" currentPage={pathname} isScrolled={isScrolled}>Company</NavItem>
                 <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled}>News</NavItem>
             </div>
 
-            {/* desktop sign in + contact */}
-            <div className="hidden md:flex flex-row gap-4 items-center">
-                <a
-                    href="https://app.voythos.io/"
-                    rel="noopener noreferrer"
-                    className={`
-                        tracking-wider
-                        transition-colors
-                        duration-200
-                        px-4
-                        py-1.5
-                        text-base
-                        cursor-pointer
-                        bg-none
-                        hover:bg-light/20
-                        ease-in
-                        ${isScrolled ? 'text-zinc-800 hover:bg-primary/10' : 'text-indigo-50 hover:bg-indigo-50/20'}
-                        ${font_med.className}
-                    `}
-                >
-                    Try the preview
-                </a>
+            {/* desktop contact */}
+            <div className="hidden md:flex">
                 <Button href="/contact" text="Contact us" isScrolled={isScrolled}/>
             </div>
 
@@ -138,6 +145,10 @@ const Navbar = () => {
                         md:hidden
                     `}
                 >
+                    {/* Solutions section header + child rows */}
+                    <div className="px-4 pt-2 text-zinc-500 text-xs tracking-[0.25em] font-mono">
+                        SOLUTIONS
+                    </div>
                     <div className="flex flex-row justify-between pr-4 group"
                     onClick={() => {
                         router.push('/solutions');
@@ -149,7 +160,37 @@ const Navbar = () => {
                             isScrolled={isScrolled}
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Solutions
+                            AortaNavigator
+                        </NavItem>
+                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
+                    </div>
+                    <div className="flex flex-row justify-between pr-4 group"
+                    onClick={() => {
+                        router.push('/rvupilot');
+                        setIsMenuOpen(false);
+                    }}>
+                        <NavItem
+                            href="/rvupilot"
+                            currentPage={pathname}
+                            isScrolled={isScrolled}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            RVUPilot <span className="text-primary text-xs tracking-[0.2em] font-mono ml-1 align-middle">BETA</span>
+                        </NavItem>
+                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
+                    </div>
+                    <div className="flex flex-row justify-between pr-4 group"
+                    onClick={() => {
+                        router.push('/pythia');
+                        setIsMenuOpen(false);
+                    }}>
+                        <NavItem
+                            href="/pythia"
+                            currentPage={pathname}
+                            isScrolled={isScrolled}
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            Pythia <span className="text-primary text-xs tracking-[0.2em] font-mono ml-1 align-middle">IN DEV</span>
                         </NavItem>
                         <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
                     </div>
@@ -182,29 +223,6 @@ const Navbar = () => {
                         <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled} onClick={() => setIsMenuOpen(false)}>News</NavItem>
                         <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
                     </div>
-                    <hr className="mx-4 text-zinc-300"/>
-
-                    <a
-                        href="https://app.voythos.io/"
-                        rel="noopener noreferrer"
-                        onClick={() => setIsMenuOpen(false)}
-                        className="flex flex-row justify-between pr-4 group"
-                    >
-                        <span
-                            className={`
-                                tracking-wider
-                                px-4
-                                py-1.5
-                                text-xl
-                                text-zinc-800
-                                cursor-pointer
-                                ${font_med.className}
-                            `}
-                        >
-                            Sign in / Sign&nbsp;up
-                        </span>
-                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
-                    </a>
                     <hr className="mx-4 text-zinc-300"/>
 
                     <div className="w-full px-4" onClick={() => setIsMenuOpen(false)}>
