@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { font_head, font_med } from "@/app/fonts";
 import VideoPlayer from "@/app/components/solutions/VideoPlayer";
+import ScrollReveal from "@/app/components/ScrollReveal";
 
 export const metadata: Metadata = {
     title: "Solutions | Voythos",
@@ -92,7 +93,7 @@ const SolutionsPage = () => {
                     px-4
                 "
             >
-                <div className="max-w-5xl w-full">
+                <ScrollReveal className="max-w-5xl w-full">
                     <h2
                         className={`text-light md:text-4xl text-3xl text-center ${font_head.className}`}
                     >
@@ -157,7 +158,7 @@ const SolutionsPage = () => {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* two ways to use voythos */}
@@ -175,7 +176,7 @@ const SolutionsPage = () => {
                     px-4
                 "
             >
-                <div className="max-w-5xl w-full">
+                <ScrollReveal className="max-w-5xl w-full">
                     <h2
                         className={`text-light md:text-4xl text-3xl text-center ${font_head.className}`}
                     >
@@ -260,7 +261,7 @@ const SolutionsPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* video — enterprise workflow walkthrough */}
@@ -277,7 +278,7 @@ const SolutionsPage = () => {
                     px-4
                 "
             >
-                <div className="max-w-4xl w-full">
+                <ScrollReveal className="max-w-4xl w-full">
                     <h2
                         className={`text-light md:text-4xl text-3xl text-center ${font_head.className}`}
                     >
@@ -297,7 +298,7 @@ const SolutionsPage = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* evidence */}
@@ -314,7 +315,7 @@ const SolutionsPage = () => {
                     px-4
                 "
             >
-                <div className="max-w-4xl w-full">
+                <ScrollReveal className="max-w-4xl w-full">
                     <h2
                         className={`text-zinc-800 md:text-4xl text-3xl text-center ${font_head.className}`}
                     >
@@ -403,7 +404,7 @@ const SolutionsPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* final CTA */}
@@ -420,7 +421,7 @@ const SolutionsPage = () => {
                     px-4
                 "
             >
-                <div className="max-w-3xl w-full text-center">
+                <ScrollReveal className="max-w-3xl w-full text-center">
                     <h2
                         className={`text-zinc-800 md:text-4xl text-3xl ${font_head.className}`}
                     >
@@ -457,7 +458,7 @@ const SolutionsPage = () => {
                             Talk to us about enterprise
                         </Link>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
         </div>
     );
