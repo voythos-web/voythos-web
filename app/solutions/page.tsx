@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { font_head, font_med } from "@/app/fonts";
+import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 
 export const metadata: Metadata = {
     title: "Solutions | Voythos",
@@ -288,18 +289,13 @@ const SolutionsPage = () => {
                     </p>
 
                     <div className="md:pt-12 pt-8">
-                        <video
-                            controls
-                            preload="metadata"
-                            playsInline
-                            className="w-full aspect-video bg-black"
-                        >
-                            <source
+                        <div className="border border-white/10 shadow-[0_0_80px_rgba(47,79,225,0.12)]">
+                            <VideoPlayer
                                 src="/videos/aortanavigator.mp4"
-                                type="video/mp4"
+                                poster="/images/solutions/aortanavigator-poster.jpg"
+                                title="AortaNavigator"
                             />
-                            Your browser does not support embedded video.
-                        </video>
+                        </div>
                     </div>
                 </div>
             </section>
