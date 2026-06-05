@@ -6,6 +6,7 @@ import { font_head } from "@/app/fonts";
 import { font_med } from "@/app/fonts";
 import ButtonBody from "../ButtonBody";
 import NewsMain from "../news/NewsMain";
+import ScrollReveal from "../ScrollReveal";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -46,13 +47,13 @@ const Main = () => {
                     md:pt-12
                 "
             >
-                <div className="hidden md:grid md:grid-cols-[1fr_1fr] md:items-center w-full max-w-[1440px] md:gap-10">
-                    <div className="flex flex-col md:pl-20 md:pt-20 max-w-[700px]">
-                        <div className={`text-indigo-50 md:text-7xl/18 lg:text-8xl/20 text-5xl ${font_head.className}`}>
-                            Transforming the delivery of aortic care.
+                <div className="hidden md:grid md:grid-cols-[3fr_2fr] md:items-center w-full max-w-[1440px] md:gap-10">
+                    <div className="flex flex-col md:pl-20 md:pt-20 max-w-[860px]">
+                        <div className={`text-indigo-50 md:text-6xl/tight lg:text-7xl/tight text-5xl ${font_head.className}`}>
+                            The precision medicine engine for vascular disease.
                         </div>
-                        <div className="text-indigo-50 text-xl pt-4 pr-16">
-                            We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
+                        <div className={`text-indigo-50 md:text-2xl text-xl md:pt-6 pt-4 pr-12 leading-snug ${font_med.className}`}>
+                            We&rsquo;re a physician-founded startup building precision tools for vascular surgeons.
                         </div>
                         <div className="pt-6">
                             <Button 
@@ -72,10 +73,10 @@ const Main = () => {
                 <div className="md:hidden w-full">
                     <div className="flex flex-col">
                         <div className={`text-indigo-50 text-5xl ${font_head.className}`}>
-                            Transforming the delivery of aortic care.
+                            The precision medicine engine for vascular disease.
                         </div>
-                        <div className={`text-indigo-50 text-xl pt-4 ${font_med.className}`}>
-                            We’re a physician-founded startup integrating the full spectrum of patient data into individual trajectories for complex aortic and vascular diseases.
+                        <div className={`text-indigo-50 text-2xl pt-5 leading-snug ${font_med.className}`}>
+                            We&rsquo;re a physician-founded startup building precision tools for vascular surgeons.
                         </div>
                     </div>
                     <div className="relative h-[380px] scale-[0.95] origin-top translate-x-2 mt-16">
@@ -101,49 +102,66 @@ const Main = () => {
                     py-20
                 "
             >
-                <div className={`text-light md:text-5xl text-3xl text-center max-w-4xl ${font_head.className}`}>
-                    Predict the trajectory of aortic disease. For one patient or
-                    your entire program.
-                </div>
+                <ScrollReveal className="w-full flex flex-col items-center">
+                {/* 3-product showcase */}
+                <div className="grid md:grid-cols-3 gap-6 max-w-5xl w-full">
+                    {/* AortaNavigator */}
+                    <Link
+                        href="/solutions"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col hover:bg-white/15 hover:border-white/30 hover:-translate-y-1 transition duration-200"
+                    >
+                        <div className={`text-light/60 md:text-sm text-xs tracking-[0.25em] font-mono h-4`}>
+                            {/* no tag — production */}
+                        </div>
+                        <div className={`text-light md:text-2xl text-xl pt-2 ${font_head.className}`}>
+                            AortaNavigator
+                        </div>
+                        <div className="text-light/85 md:text-base text-sm pt-3 leading-snug">
+                            Predictive intelligence for AAA, TBAD, and TAA.
+                            Surveillance and screening at scale.
+                        </div>
+                    </Link>
 
-                {/* two-tier teaser */}
-                <div className="grid md:grid-cols-2 gap-6 md:mt-16 mt-12 max-w-4xl w-full">
-                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col">
-                        <div className={`text-light/60 md:text-base text-sm tracking-[0.25em] font-mono`}>
-                            PREVIEW
+                    {/* RVUPilot */}
+                    <Link
+                        href="/rvupilot"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col hover:bg-white/15 hover:border-white/30 hover:-translate-y-1 transition duration-200"
+                    >
+                        <div className={`text-primary md:text-sm text-xs tracking-[0.25em] font-mono h-4`}>
+                            BETA
                         </div>
                         <div className={`text-light md:text-2xl text-xl pt-2 ${font_head.className}`}>
-                            Try the experience
+                            RVUPilot
                         </div>
-                        <div className="text-light/85 md:text-base text-sm pt-3">
-                            A pared-down version of our models, on a simplified
-                            variable set you can enter manually. See how
-                            trajectory modeling works. Free.
+                        <div className="text-light/85 md:text-base text-sm pt-3 leading-snug">
+                            Real-time RVU coding for surgeons. Dictate or paste
+                            your op note.
                         </div>
-                    </div>
-                    <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col">
-                        <div className={`text-light/60 md:text-base text-sm tracking-[0.25em] font-mono`}>
-                            ENTERPRISE
+                    </Link>
+
+                    {/* Pythia */}
+                    <Link
+                        href="/pythia"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col hover:bg-white/15 hover:border-white/30 hover:-translate-y-1 transition duration-200"
+                    >
+                        <div className={`text-primary md:text-sm text-xs tracking-[0.25em] font-mono h-4`}>
+                            IN DEV
                         </div>
                         <div className={`text-light md:text-2xl text-xl pt-2 ${font_head.className}`}>
-                            The full platform
+                            Pythia
                         </div>
-                        <div className="text-light/85 md:text-base text-sm pt-3">
-                            Full EHR integration runs our complete models on
-                            hundreds of clinical variables. Workflow tooling for
-                            screening, incidental findings, and surveillance.
+                        <div className="text-light/85 md:text-base text-sm pt-3 leading-snug">
+                            A frontier multimodal model for the entire aorta.
+                            Pursuing FDA clearance.
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
                 <div className="text-light/70 md:text-base text-sm text-center md:mt-12 mt-8 max-w-2xl">
                     Trained on 500,000+ longitudinal patient records. Backed by
                     Mayo Clinic and Northwestern Medicine.
                 </div>
-
-                <div className="md:mt-10 mt-8">
-                    <Button href="/solutions" text="See our solutions" />
-                </div>
+                </ScrollReveal>
             </section>
 
             {/* company */}
@@ -162,6 +180,7 @@ const Main = () => {
                     pb-10
                 "
             >
+                <ScrollReveal className="w-full flex flex-col">
                 <div className={`flex flex-col text-zinc-800 md:text-4xl text-2xl md:pt-20 pt-10 ${font_head.className}`}>
                     We are a team with one goal: to improve patient care with emerging technologies grounded in clinical expertise.
                 </div>
@@ -280,6 +299,7 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
+                </ScrollReveal>
             </section>
 
             {/* support */}
@@ -298,6 +318,7 @@ const Main = () => {
                     md:bg-none 
                 "
             >
+                <ScrollReveal className="w-full flex flex-col">
                 <div className={`flex flex-col text-zinc-800 md:text-4xl text-3xl md:pt-20 pt-10 ${font_head.className}`}>
                     Supported by
                 </div>
@@ -445,8 +466,9 @@ const Main = () => {
                         </div>
                     </div>
                 </div>
+                </ScrollReveal>
             </section>
-            
+
 
             {/* news & insights */}
             <section
@@ -463,6 +485,7 @@ const Main = () => {
                     pb-10
                 "
             >
+                <ScrollReveal className="w-full flex flex-col">
                 <div className={`flex flex-col text-light md:text-4xl text-3xl md:pt-20 pt-10 ${font_head.className}`}>
                     News & Insights
                 </div>
@@ -487,12 +510,13 @@ const Main = () => {
                             buttontext="Read more"
                         />
                     </div>
-                    <div className="flex justify-end pt-10 px-2"> 
+                    <div className="flex justify-end pt-10 px-2">
                         <ButtonBody href="/news" text="View all news" colorprimary/>
                     </div>
                 </div>
+                </ScrollReveal>
             </section>
-            
+
         </div>
     );
 }
