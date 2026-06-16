@@ -83,6 +83,7 @@ const Navbar = () => {
                 <NavItem href="/#solutions" currentPage={pathname} isScrolled={isScrolled}>Solutions</NavItem>
                 <NavItem href="/#company" currentPage={pathname} isScrolled={isScrolled}>Company</NavItem>
                 <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled}>News</NavItem>
+                <NavItem href="/insights" currentPage={pathname} isScrolled={isScrolled}>Insights</NavItem>
             </div>
 
             {/* desktop contact */}
@@ -164,6 +165,15 @@ const Navbar = () => {
                         setIsMenuOpen(false);
                     }}>
                         <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled} onClick={() => setIsMenuOpen(false)}>News</NavItem>
+                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
+                    </div>
+                    <hr className="mx-4 text-zinc-300"/>
+
+                    <div className="flex flex-row justify-between pr-4 group" onClick={() => {
+                        router.push('/insights');
+                        setIsMenuOpen(false);
+                    }}>
+                        <NavItem href="/insights" currentPage={pathname} isScrolled={isScrolled} onClick={() => setIsMenuOpen(false)}>Insights</NavItem>
                         <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
                     </div>
                     <hr className="mx-4 text-zinc-300"/>
