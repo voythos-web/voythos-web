@@ -1,9 +1,17 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { font_med } from "@/app/fonts";
+import { RESOURCES_PUBLISHED } from "@/lib/resources";
 
 const Footer = () => {
+    const pathname = usePathname();
     const year = new Date().getFullYear();
+
+    // Standalone sales pages render their own chrome — skip the site footer.
+    if (pathname?.startsWith('/aortanavigator')) return null;
 
     return (
         <footer
@@ -53,6 +61,9 @@ const Footer = () => {
                     <Link href="/#company" className="hover:opacity-60 transition duration-200">Company</Link>
                     <Link href="/news" className="hover:opacity-60 transition duration-200">News</Link>
                     <Link href="/blog" className="hover:opacity-60 transition duration-200">Blog</Link>
+                    {RESOURCES_PUBLISHED && (
+                        <Link href="/resources" className="hover:opacity-60 transition duration-200">Resources</Link>
+                    )}
                     <Link href="/contact" className="hover:opacity-60 transition duration-200">Contact</Link>
                 </nav>
 
@@ -70,6 +81,9 @@ const Footer = () => {
                     <Link href="/#company" className="hover:opacity-60 transition duration-200">Company</Link>
                     <Link href="/news" className="hover:opacity-60 transition duration-200">News</Link>
                     <Link href="/blog" className="hover:opacity-60 transition duration-200">Blog</Link>
+                    {RESOURCES_PUBLISHED && (
+                        <Link href="/resources" className="hover:opacity-60 transition duration-200">Resources</Link>
+                    )}
                     <Link href="/contact" className="hover:opacity-60 transition duration-200">Contact</Link>
                 </nav>
 
