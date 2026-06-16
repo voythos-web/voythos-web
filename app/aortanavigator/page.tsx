@@ -6,12 +6,42 @@ import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 import ScrollReveal from "@/app/components/ScrollReveal";
 import { RESOURCES_PUBLISHED } from "@/lib/resources";
 
+const OG_IMAGE = "https://www.voythos.ai/images/solutions/aortanavigator-poster.jpg";
+const OG_DESCRIPTION =
+    "Catch the aortic patients slipping out of follow-up: incidental AAAs, lapsed surveillance, and screening-eligible patients.";
+
+// Canonical, crawlable share page. The Open Graph + Twitter tags below are
+// server-rendered into the static <head> so LinkedIn (which does not run JS)
+// gets a title, description, and image on first fetch and renders a rich card.
 export const metadata: Metadata = {
-    title: "AortaNavigator — Find the patients who are already yours",
+    title: "AortaNavigator | Voythos",
     description:
         "AortaNavigator surfaces every patient who belongs on your schedule. The one nobody screened, the incidental finding nobody routed, and the surveillance patient who quietly disappeared.",
-    // Sales page — unlisted, not for general traffic. Don't index, don't follow.
-    robots: { index: false, follow: false },
+    alternates: {
+        canonical: "https://www.voythos.ai/aortanavigator",
+    },
+    robots: { index: true, follow: true },
+    openGraph: {
+        title: "AortaNavigator | Voythos",
+        description: OG_DESCRIPTION,
+        url: "https://www.voythos.ai/aortanavigator",
+        type: "website",
+        siteName: "Voythos",
+        images: [
+            {
+                url: OG_IMAGE,
+                width: 1920,
+                height: 1080,
+                alt: "AortaNavigator enterprise workflow",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AortaNavigator | Voythos",
+        description: OG_DESCRIPTION,
+        images: [OG_IMAGE],
+    },
 };
 
 const AortaNavigatorSalesPage = () => {
