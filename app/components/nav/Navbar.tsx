@@ -47,10 +47,14 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [pathname])
 
+    // Standalone sales pages render their own chrome — skip the site navbar entirely.
+    // (Must come after all hooks to satisfy the rules of hooks.)
+    if (pathname?.startsWith('/aortanavigator')) return null;
+
     return (
         <div
             className={`
-                fixed 
+                fixed
                 z-10 
                 top-0 
                 left-0 
