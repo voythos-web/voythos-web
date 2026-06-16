@@ -78,6 +78,47 @@ const SolutionsPage = () => {
                 </div>
             </section>
 
+            {/* AortaNavigator — flagship product, leads the page. Deep-link target
+                (/solutions#aortanavigator). scroll-mt offsets the fixed nav so the
+                video isn't hidden behind the header when the anchor jumps. */}
+            <section
+                id="aortanavigator"
+                className="
+                    bg-dark
+                    w-screen
+                    flex
+                    flex-col
+                    items-center
+                    md:py-24
+                    py-16
+                    md:px-20
+                    px-4
+                    scroll-mt-28
+                "
+            >
+                <ScrollReveal className="max-w-4xl w-full">
+                    <h2
+                        className={`text-light md:text-4xl text-3xl text-center ${font_head.className}`}
+                    >
+                        See the enterprise workflow in action
+                    </h2>
+                    <p className="text-light/70 md:text-lg text-base text-center md:pt-4 pt-3">
+                        AortaNavigator: how Voythos surfaces patients, runs
+                        models, and schedules follow-up.
+                    </p>
+
+                    <div className="md:pt-12 pt-8">
+                        <div className="border border-white/10 shadow-[0_0_80px_rgba(47,79,225,0.12)]">
+                            <VideoPlayer
+                                src="/videos/aortanavigator.mp4"
+                                poster="/images/solutions/aortanavigator-poster.jpg"
+                                title="AortaNavigator"
+                            />
+                        </div>
+                    </div>
+                </ScrollReveal>
+            </section>
+
             {/* what we predict — on dark wave bg with glassmorphic cards */}
             <section
                 className="
@@ -259,43 +300,6 @@ const SolutionsPage = () => {
                                     Talk to us about enterprise
                                 </Link>
                             </div>
-                        </div>
-                    </div>
-                </ScrollReveal>
-            </section>
-
-            {/* video — enterprise workflow walkthrough */}
-            <section
-                className="
-                    bg-dark
-                    w-screen
-                    flex
-                    flex-col
-                    items-center
-                    md:py-24
-                    py-16
-                    md:px-20
-                    px-4
-                "
-            >
-                <ScrollReveal className="max-w-4xl w-full">
-                    <h2
-                        className={`text-light md:text-4xl text-3xl text-center ${font_head.className}`}
-                    >
-                        See the enterprise workflow in action
-                    </h2>
-                    <p className="text-light/70 md:text-lg text-base text-center md:pt-4 pt-3">
-                        AortaNavigator: how Voythos surfaces patients, runs
-                        models, and schedules follow-up.
-                    </p>
-
-                    <div className="md:pt-12 pt-8">
-                        <div className="border border-white/10 shadow-[0_0_80px_rgba(47,79,225,0.12)]">
-                            <VideoPlayer
-                                src="/videos/aortanavigator.mp4"
-                                poster="/images/solutions/aortanavigator-poster.jpg"
-                                title="AortaNavigator"
-                            />
                         </div>
                     </div>
                 </ScrollReveal>
