@@ -1,6 +1,8 @@
 # Allow all crawlers by default
 User-agent: *
 Allow: /
+# Invisible pages — not for indexing (reachable only via direct cold-email link)
+Disallow: /rvupilot-ortho
 
 # Explicitly allow AI crawlers
 User-agent: GPTBot
