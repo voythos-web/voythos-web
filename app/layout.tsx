@@ -3,8 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 import { font_body } from "./fonts";
-import Navbar from "./components/nav/Navbar";
-import Footer from "./components/Footer";
+import { ConditionalNavbar, ConditionalFooter } from "./components/ConditionalChrome";
 
 export const metadata: Metadata = {
   title: "Voythos | Transforming the delivery of aortic care.",
@@ -21,11 +20,9 @@ export default function RootLayout({
       <body
         className={font_body.className}
       >
-        <div>
-          <Navbar />
-        </div>
+        <ConditionalNavbar />
         {children}
-        <Footer />
+        <ConditionalFooter />
         <Analytics />
       </body>
     </html>
