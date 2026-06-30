@@ -4,13 +4,18 @@ import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 import ScrollReveal from "@/app/components/ScrollReveal";
 import { SCHEDULE_DEMO_URL } from "@/lib/links";
 
+// Orthopedics-specific RVUPilot landing page. Unlisted: reachable by direct
+// URL for outreach, not linked anywhere in the site nav, and kept out of search.
+// (To make it shareable like /aortanavigator, add Open Graph tags and flip
+// robots to index, follow.)
 export const metadata: Metadata = {
-    title: "RVUPilot | Voythos",
+    title: "RVUPilot for Orthopedics | Voythos",
     description:
-        "Dictate your operative note. RVUPilot calculates the RVUs from what you documented and surfaces specific language that would capture more — for procedures you actually performed. In beta.",
+        "Dictate your operative note. RVUPilot calculates the RVUs from what you documented and surfaces specific language that would capture more — for the orthopedic procedures you actually performed. In beta.",
+    robots: { index: false, follow: false },
 };
 
-const RVUPilotPage = () => {
+const RVUPilotOrthoPage = () => {
     return (
         <div className="overflow-x-hidden">
             {/* hero */}
@@ -32,7 +37,7 @@ const RVUPilotPage = () => {
             >
                 <div className="max-w-4xl w-full flex flex-col items-center text-center">
                     <div className={`text-primary md:text-base text-sm tracking-[0.25em] font-mono`}>
-                        RVUPILOT &nbsp;&middot;&nbsp; IN BETA
+                        RVUPILOT FOR ORTHOPEDICS &nbsp;&middot;&nbsp; IN BETA
                     </div>
                     <h1
                         className={`text-zinc-800 md:text-6xl text-4xl pt-4 ${font_head.className}`}
@@ -42,9 +47,10 @@ const RVUPilotPage = () => {
                     <p
                         className={`text-zinc-700 md:text-2xl text-lg md:pt-6 pt-4 max-w-3xl ${font_med.className}`}
                     >
-                        Dictate live or paste in your note. RVUPilot calculates
-                        the RVUs from what you documented and surfaces language
-                        to capture more, for procedures you actually performed.
+                        Dictate live or paste in your op note. RVUPilot calculates
+                        the RVUs from what you documented and surfaces language to
+                        capture more, for the orthopedic procedures you actually
+                        performed.
                     </p>
 
                     <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 md:pt-10 pt-8">
@@ -190,12 +196,14 @@ const RVUPilotPage = () => {
                     </h2>
                     <div className="md:pt-10 pt-6 space-y-5 text-zinc-700 md:text-lg text-base leading-relaxed">
                         <p>
-                            Vascular surgery has some of the most intricate
-                            documentation requirements in medicine. Small wording
-                            differences mean meaningful RVU differences. Surgeons
-                            can&apos;t realistically keep up with every code,
-                            modifier, and language nuance while running a full
-                            clinic and OR schedule.
+                            Orthopedic surgery carries some of the most intricate
+                            documentation and coding requirements in medicine.
+                            Laterality, multiple procedures in a single setting,
+                            and small wording differences all translate into
+                            meaningful RVU differences. Surgeons can&apos;t
+                            realistically keep up with every code, modifier, and
+                            language nuance while running a full clinic and OR
+                            schedule.
                         </p>
                         <p>
                             RVUPilot does that part. So you don&apos;t leave
@@ -311,4 +319,4 @@ const RVUPilotPage = () => {
     );
 };
 
-export default RVUPilotPage;
+export default RVUPilotOrthoPage;
