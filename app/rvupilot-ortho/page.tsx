@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { font_head, font_med } from "@/app/fonts";
 import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 import ScrollReveal from "@/app/components/ScrollReveal";
+import { SCHEDULE_DEMO_URL } from "@/lib/links";
 
 // INVISIBLE PAGE — reachable only via the ortho cold-email link.
 // noindex/nofollow here + excluded from sitemap (next-sitemap.config.js) + Disallow in public/robots.txt
@@ -51,7 +52,7 @@ const RVUPilotOrthoPage = () => {
                         surgeons.
                     </p>
 
-                    <div className="md:pt-10 pt-8">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 md:pt-10 pt-8">
                         <a
                             href="https://coding.voythos.io?utm_source=coldemail&utm_medium=email&utm_campaign=rvupilot_ortho&utm_content=lp_signup"
                             rel="noopener noreferrer"
@@ -66,6 +67,22 @@ const RVUPilotOrthoPage = () => {
                             `}
                         >
                             Get early access
+                        </a>
+                        <a
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`
+                                inline-flex items-center justify-center
+                                bg-zinc-800 text-white
+                                md:text-base text-lg
+                                py-3 px-6
+                                hover:bg-zinc-700
+                                transition duration-200
+                                ${font_med.className}
+                            `}
+                        >
+                            Schedule a Demo
                         </a>
                     </div>
                 </div>
@@ -259,7 +276,7 @@ const RVUPilotOrthoPage = () => {
                         note.
                     </p>
 
-                    <div className="md:pt-10 pt-8">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 md:pt-10 pt-8">
                         <a
                             href="https://coding.voythos.io?utm_source=coldemail&utm_medium=email&utm_campaign=rvupilot_ortho&utm_content=lp_signup_closer"
                             rel="noopener noreferrer"
@@ -274,6 +291,22 @@ const RVUPilotOrthoPage = () => {
                             `}
                         >
                             Get early access
+                        </a>
+                        <a
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`
+                                inline-flex items-center justify-center
+                                bg-zinc-800 text-white
+                                md:text-base text-lg
+                                py-3 px-6
+                                hover:bg-zinc-700
+                                transition duration-200
+                                ${font_med.className}
+                            `}
+                        >
+                            Schedule a Demo
                         </a>
                     </div>
                 </ScrollReveal>
