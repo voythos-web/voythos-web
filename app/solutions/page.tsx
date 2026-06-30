@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { font_head, font_med } from "@/app/fonts";
 import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 import ScrollReveal from "@/app/components/ScrollReveal";
+import { SCHEDULE_DEMO_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
     title: "Solutions | Voythos",
@@ -40,13 +40,14 @@ const SolutionsPage = () => {
                     <p
                         className={`text-zinc-700 md:text-2xl text-lg md:pt-6 pt-4 max-w-3xl ${font_med.className}`}
                     >
-                        Built for vascular surgeons. Preview the experience, then
-                        bring the full predictive platform to your program.
+                        Built for vascular surgeons. Bring the full predictive
+                        platform to your program.
                     </p>
 
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 md:pt-10 pt-8 w-full md:w-auto">
                         <a
-                            href="https://app.voythos.io/"
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className={`
                                 inline-flex items-center justify-center
@@ -58,22 +59,8 @@ const SolutionsPage = () => {
                                 ${font_med.className}
                             `}
                         >
-                            Try the preview
+                            Schedule a Demo
                         </a>
-                        <Link
-                            href="/contact"
-                            className={`
-                                inline-flex items-center justify-center
-                                bg-zinc-800 text-white
-                                md:text-base text-lg
-                                py-3 px-6
-                                hover:bg-zinc-700
-                                transition duration-200
-                                ${font_med.className}
-                            `}
-                        >
-                            Talk to us about enterprise
-                        </Link>
                     </div>
                 </div>
             </section>
@@ -202,7 +189,7 @@ const SolutionsPage = () => {
                 </ScrollReveal>
             </section>
 
-            {/* two ways to use voythos */}
+            {/* the full predictive platform */}
             <section
                 className="
                     bg-[url('/images/backgrounds/wave_bg.png')]
@@ -217,64 +204,16 @@ const SolutionsPage = () => {
                     px-4
                 "
             >
-                <ScrollReveal className="max-w-5xl w-full">
+                <ScrollReveal className="max-w-3xl w-full">
                     <h2
                         className={`text-light md:text-4xl text-3xl text-center ${font_head.className}`}
                     >
-                        Two ways to use Voythos
+                        The full predictive platform
                     </h2>
 
-                    <div className="grid md:grid-cols-2 gap-6 md:pt-14 pt-10">
-                        {/* Preview */}
-                        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 flex flex-col">
-                            <div
-                                className={`text-light/60 md:text-base text-sm tracking-[0.25em] font-mono`}
-                            >
-                                PREVIEW
-                            </div>
-                            <div
-                                className={`text-light md:text-3xl text-2xl pt-2 ${font_head.className}`}
-                            >
-                                Try the experience
-                            </div>
-                            <p className="text-light/85 md:text-base text-base pt-5 leading-relaxed">
-                                A pared-down version of our models, run on a
-                                simplified set of clinical variables you enter
-                                manually. See how trajectory modeling works. Free,
-                                no EHR integration.
-                            </p>
-                            <div className="pt-8 mt-auto">
-                                <a
-                                    href="https://app.voythos.io/"
-                                    rel="noopener noreferrer"
-                                    className={`
-                                        inline-flex items-center justify-center
-                                        bg-primary text-white
-                                        text-base
-                                        py-3 px-6
-                                        hover:bg-primary/90
-                                        transition duration-200
-                                        ${font_med.className}
-                                    `}
-                                >
-                                    Try the preview
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Enterprise */}
-                        <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 flex flex-col">
-                            <div
-                                className={`text-light/60 md:text-base text-sm tracking-[0.25em] font-mono`}
-                            >
-                                ENTERPRISE
-                            </div>
-                            <div
-                                className={`text-light md:text-3xl text-2xl pt-2 ${font_head.className}`}
-                            >
-                                The full predictive platform
-                            </div>
-                            <p className="text-light/85 md:text-base text-base pt-5 leading-relaxed">
+                    <div className="md:pt-12 pt-8">
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 md:p-10 p-8 flex flex-col items-center text-center">
+                            <p className="text-light/85 md:text-lg text-base leading-relaxed max-w-2xl">
                                 Full EHR integration runs our complete models on
                                 hundreds of clinical variables across your patient
                                 population. Workflow tooling surfaces patients who
@@ -284,9 +223,11 @@ const SolutionsPage = () => {
                                 follow-up calibrated to individual risk. Built for
                                 vascular chiefs running aortic care at scale.
                             </p>
-                            <div className="pt-8 mt-auto">
-                                <Link
-                                    href="/contact"
+                            <div className="pt-8">
+                                <a
+                                    href={SCHEDULE_DEMO_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className={`
                                         inline-flex items-center justify-center
                                         bg-white text-zinc-800
@@ -297,8 +238,8 @@ const SolutionsPage = () => {
                                         ${font_med.className}
                                     `}
                                 >
-                                    Talk to us about enterprise
-                                </Link>
+                                    Schedule a Demo
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -433,7 +374,8 @@ const SolutionsPage = () => {
                     </h2>
                     <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center md:pt-10 pt-8">
                         <a
-                            href="https://app.voythos.io/"
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
                             rel="noopener noreferrer"
                             className={`
                                 inline-flex items-center justify-center
@@ -445,22 +387,8 @@ const SolutionsPage = () => {
                                 ${font_med.className}
                             `}
                         >
-                            Try the preview
+                            Schedule a Demo
                         </a>
-                        <Link
-                            href="/contact"
-                            className={`
-                                inline-flex items-center justify-center
-                                bg-zinc-800 text-white
-                                md:text-base text-lg
-                                py-3 px-6
-                                hover:bg-zinc-700
-                                transition duration-200
-                                ${font_med.className}
-                            `}
-                        >
-                            Talk to us about enterprise
-                        </Link>
                     </div>
                 </ScrollReveal>
             </section>

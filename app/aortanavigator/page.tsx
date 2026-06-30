@@ -5,6 +5,7 @@ import { font_head, font_med } from "@/app/fonts";
 import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 import ScrollReveal from "@/app/components/ScrollReveal";
 import { RESOURCES_PUBLISHED } from "@/lib/resources";
+import { SCHEDULE_DEMO_URL } from "@/lib/links";
 
 const OG_IMAGE = "https://www.voythos.ai/images/solutions/aortanavigator-poster.jpg";
 const OG_DESCRIPTION =
@@ -66,10 +67,12 @@ const AortaNavigatorSalesPage = () => {
                         </span>
                     </Link>
                     <a
-                        href="#book"
+                        href={SCHEDULE_DEMO_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={`hidden md:inline-flex items-center gap-2 bg-primary text-white text-sm py-2.5 px-5 hover:bg-primary/90 transition duration-200 ${font_med.className}`}
                     >
-                        Book a scoping call
+                        Schedule a Demo
                         <span aria-hidden>→</span>
                     </a>
                 </div>
@@ -98,10 +101,12 @@ const AortaNavigatorSalesPage = () => {
                         </p>
                         <div className="flex flex-wrap items-center gap-5 mt-8">
                             <a
-                                href="#book"
+                                href={SCHEDULE_DEMO_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className={`inline-flex items-center gap-2 bg-primary text-white text-base py-3 px-6 hover:bg-primary/90 transition duration-200 ${font_med.className}`}
                             >
-                                Book a scoping call
+                                Schedule a Demo
                                 <span aria-hidden>→</span>
                             </a>
                             <a href="#how" className="text-sm text-zinc-600 underline underline-offset-4 hover:text-zinc-900 transition">
@@ -531,13 +536,15 @@ const AortaNavigatorSalesPage = () => {
                         whether AortaNavigator fits your program.
                     </p>
                     <div className="md:mt-10 mt-8">
-                        <Link
-                            href="/contact"
+                        <a
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`inline-flex items-center justify-center gap-2 bg-zinc-900 text-white text-base py-3.5 px-7 hover:bg-zinc-800 transition duration-200 ${font_med.className}`}
                         >
-                            Book a scoping call
+                            Schedule a Demo
                             <span aria-hidden>→</span>
-                        </Link>
+                        </a>
                     </div>
                     <p className="text-white/85 text-sm italic mt-7">
                         P.S. At SVS VAM in Boston this month? We&rsquo;d rather
