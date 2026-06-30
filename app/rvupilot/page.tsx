@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { font_head, font_med } from "@/app/fonts";
 import VideoPlayer from "@/app/components/solutions/VideoPlayer";
 import ScrollReveal from "@/app/components/ScrollReveal";
+import { SCHEDULE_DEMO_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
     title: "RVUPilot | Voythos",
@@ -46,7 +47,7 @@ const RVUPilotPage = () => {
                         to capture more, for procedures you actually performed.
                     </p>
 
-                    <div className="md:pt-10 pt-8">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 md:pt-10 pt-8">
                         <a
                             href="https://coding.voythos.io"
                             rel="noopener noreferrer"
@@ -61,6 +62,22 @@ const RVUPilotPage = () => {
                             `}
                         >
                             Get early access
+                        </a>
+                        <a
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`
+                                inline-flex items-center justify-center
+                                bg-zinc-800 text-white
+                                md:text-base text-lg
+                                py-3 px-6
+                                hover:bg-zinc-700
+                                transition duration-200
+                                ${font_med.className}
+                            `}
+                        >
+                            Schedule a Demo
                         </a>
                     </div>
                 </div>
@@ -255,7 +272,7 @@ const RVUPilotPage = () => {
                         note.
                     </p>
 
-                    <div className="md:pt-10 pt-8">
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 md:pt-10 pt-8">
                         <a
                             href="https://coding.voythos.io"
                             rel="noopener noreferrer"
@@ -270,6 +287,22 @@ const RVUPilotPage = () => {
                             `}
                         >
                             Get early access
+                        </a>
+                        <a
+                            href={SCHEDULE_DEMO_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`
+                                inline-flex items-center justify-center
+                                bg-zinc-800 text-white
+                                md:text-base text-lg
+                                py-3 px-6
+                                hover:bg-zinc-700
+                                transition duration-200
+                                ${font_med.className}
+                            `}
+                        >
+                            Schedule a Demo
                         </a>
                     </div>
                 </ScrollReveal>
