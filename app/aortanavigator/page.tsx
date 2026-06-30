@@ -531,10 +531,6 @@ const AortaNavigatorSalesPage = () => {
                     <h2 className={`text-white md:text-5xl text-4xl leading-[1.05] ${font_head.className}`}>
                         Let&rsquo;s talk.
                     </h2>
-                    <p className="text-white/90 md:text-xl text-lg mt-5">
-                        Thirty minutes. We&rsquo;ll figure out together
-                        whether AortaNavigator fits your program.
-                    </p>
                     <div className="md:mt-10 mt-8">
                         <a
                             href={SCHEDULE_DEMO_URL}
@@ -546,11 +542,6 @@ const AortaNavigatorSalesPage = () => {
                             <span aria-hidden>→</span>
                         </a>
                     </div>
-                    <p className="text-white/85 text-sm italic mt-7">
-                        P.S. At SVS VAM in Boston this month? We&rsquo;d rather
-                        show you in person. Reply with a time and we&rsquo;ll
-                        find you on the floor.
-                    </p>
                 </ScrollReveal>
             </section>
 
