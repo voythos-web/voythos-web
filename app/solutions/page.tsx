@@ -95,7 +95,10 @@ const SolutionsPage = () => {
                     </p>
 
                     <div className="md:pt-12 pt-8">
-                        <div className="border border-white/10 shadow-[0_0_80px_rgba(47,79,225,0.12)]">
+                        <div
+                            id="aortanavigator-video"
+                            className="border border-white/10 shadow-[0_0_80px_rgba(47,79,225,0.12)] scroll-mt-28"
+                        >
                             <VideoPlayer
                                 src="/videos/aortanavigator.mp4"
                                 poster="/images/solutions/aortanavigator-poster.jpg"
