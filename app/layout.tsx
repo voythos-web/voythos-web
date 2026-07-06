@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -18,6 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* RB2B visitor identification snippet — must be a plain inline script in
+            the <head> so it appears in the server-rendered HTML (RB2B's checker
+            fetches raw HTML without executing JS). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(key){if(window.reb2b)return;window.reb2b={loaded:true};var s=document.createElement("script");s.async=true;s.src="https://ddwl4m2hdecbv.cloudfront.net/b/"+key+"/"+key+".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s,document.getElementsByTagName("script")[0]);}("EN4M0HLQKEOM");`,
+          }}
+        />
+      </head>
       <body
         className={font_body.className}
       >
@@ -25,17 +34,6 @@ export default function RootLayout({
         {children}
         <ConditionalFooter />
         <Analytics />
-        {/* RB2B visitor identification snippet */}
-        <Script id="reb2b" strategy="afterInteractive">
-          {`!function(key) {
-            if (window.reb2b) return;
-            window.reb2b = {loaded: true};
-            var s = document.createElement("script");
-            s.async = true;
-            s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";
-            document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);
-          }("EN4M0HLQKEOM");`}
-        </Script>
       </body>
     </html>
   );
