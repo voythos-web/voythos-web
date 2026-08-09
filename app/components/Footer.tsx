@@ -41,13 +41,6 @@ const Footer = () => {
                                     <div className={`text-zinc-800 ${font_med.className}`}>AortaNavigator</div>
                                     <div className="text-zinc-600 text-sm pt-0.5">Predictive intelligence for AAA, TBAD, TAA</div>
                                 </Link>
-                                <Link href="/rvupilot" className="block px-5 py-4 hover:bg-light/30 transition duration-150 border-t border-zinc-200">
-                                    <div className={`text-zinc-800 ${font_med.className}`}>
-                                        RVUPilot
-                                        <span className="text-primary text-xs tracking-[0.2em] font-mono ml-2 align-middle">BETA</span>
-                                    </div>
-                                    <div className="text-zinc-600 text-sm pt-0.5">Real-time RVU coding for surgeons</div>
-                                </Link>
                                 <Link href="/pythia" className="block px-5 py-4 hover:bg-light/30 transition duration-150 border-t border-zinc-200">
                                     <div className={`text-zinc-800 ${font_med.className}`}>
                                         Pythia
@@ -71,9 +64,6 @@ const Footer = () => {
                 <nav className="flex md:hidden flex-col gap-3 text-lg">
                     <Link href="/solutions" className="hover:opacity-60 transition duration-200">
                         AortaNavigator
-                    </Link>
-                    <Link href="/rvupilot" className="hover:opacity-60 transition duration-200">
-                        RVUPilot <span className="text-primary/80 text-xs tracking-[0.2em] font-mono ml-1 align-middle">BETA</span>
                     </Link>
                     <Link href="/pythia" className="hover:opacity-60 transition duration-200">
                         Pythia <span className="text-primary/80 text-xs tracking-[0.2em] font-mono ml-1 align-middle">IN DEV</span>
