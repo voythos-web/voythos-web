@@ -5,6 +5,6 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
-  // Invisible pages — keep out of the sitemap (reachable only via direct cold-email link).
-  exclude: ['/rvupilot-ortho'],
+  // Invisible pages to keep out of the sitemap (none currently).
+  exclude: [],
 };

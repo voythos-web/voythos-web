@@ -104,7 +104,7 @@ const Main = () => {
             >
                 <ScrollReveal className="w-full flex flex-col items-center">
                 {/* 3-product showcase */}
-                <div className="grid md:grid-cols-3 gap-6 max-w-5xl w-full">
+                <div className="grid md:grid-cols-2 gap-6 max-w-3xl w-full">
                     {/* AortaNavigator */}
                     <Link
                         href="/solutions"
@@ -119,23 +119,6 @@ const Main = () => {
                         <div className="text-light/85 md:text-base text-sm pt-3 leading-snug">
                             Predictive intelligence for AAA, TBAD, and TAA.
                             Surveillance and screening at scale.
-                        </div>
-                    </Link>
-
-                    {/* RVUPilot */}
-                    <Link
-                        href="/rvupilot"
-                        className="bg-white/10 backdrop-blur-md border border-white/20 p-6 flex flex-col hover:bg-white/15 hover:border-white/30 hover:-translate-y-1 transition duration-200"
-                    >
-                        <div className={`text-primary md:text-sm text-xs tracking-[0.25em] font-mono h-4`}>
-                            BETA
-                        </div>
-                        <div className={`text-light md:text-2xl text-xl pt-2 ${font_head.className}`}>
-                            RVUPilot
-                        </div>
-                        <div className="text-light/85 md:text-base text-sm pt-3 leading-snug">
-                            Real-time RVU coding for surgeons. Dictate or paste
-                            your op note.
                         </div>
                     </Link>
 

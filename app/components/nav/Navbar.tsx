@@ -95,13 +95,6 @@ const Navbar = () => {
                                 <div className={`text-zinc-800 ${font_med.className}`}>AortaNavigator</div>
                                 <div className="text-zinc-600 text-sm pt-0.5">Predictive intelligence for AAA, TBAD, TAA</div>
                             </Link>
-                            <Link href="/rvupilot" className="block px-5 py-4 hover:bg-light/30 transition duration-150 border-t border-zinc-200">
-                                <div className={`text-zinc-800 ${font_med.className}`}>
-                                    RVUPilot
-                                    <span className="text-primary text-xs tracking-[0.2em] font-mono ml-2 align-middle">BETA</span>
-                                </div>
-                                <div className="text-zinc-600 text-sm pt-0.5">Real-time RVU coding for surgeons</div>
-                            </Link>
                             <Link href="/pythia" className="block px-5 py-4 hover:bg-light/30 transition duration-150 border-t border-zinc-200">
                                 <div className={`text-zinc-800 ${font_med.className}`}>
                                     Pythia
@@ -165,21 +158,6 @@ const Navbar = () => {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             AortaNavigator
-                        </NavItem>
-                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
-                    </div>
-                    <div className="flex flex-row justify-between pr-4 group"
-                    onClick={() => {
-                        router.push('/rvupilot');
-                        setIsMenuOpen(false);
-                    }}>
-                        <NavItem
-                            href="/rvupilot"
-                            currentPage={pathname}
-                            isScrolled={isScrolled}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            RVUPilot <span className="text-primary text-xs tracking-[0.2em] font-mono ml-1 align-middle">BETA</span>
                         </NavItem>
                         <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
                     </div>

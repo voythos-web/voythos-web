@@ -5,8 +5,8 @@ import Navbar from './nav/Navbar';
 import Footer from './Footer';
 
 // Paths that render WITHOUT the site nav/footer — standalone, detached landing pages.
-// Keep in sync with any other "bare" routes. /rvupilot-ortho is an invisible cold-email landing.
-const BARE_PATHS = ['/rvupilot-ortho'];
+// None currently; add future bare routes here.
+const BARE_PATHS: string[] = [];
 
 const isBare = (pathname: string | null) =>
     !!pathname && BARE_PATHS.includes(pathname);
