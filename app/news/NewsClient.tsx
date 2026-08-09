@@ -19,6 +19,11 @@ const NewsClient = () => {
                 <hr className="text-zinc-500 mt-4"/>
                 <div className="grid md:grid-cols-3 grid-cols-1 md:gap-8 gap-4 mt-8 max-w-full mb-10">
                     <NewsCard
+                        text="Voythos announces a data partnership with Northwestern Medicine Ventures and Innovation"
+                        date="July 13, 2026"
+                        href="/news/Jul-13-26"
+                    />
+                    <NewsCard
                         text="Voythos presents at the 2026 MedTech Innovator Radar Forum"
                         date="April 9, 2026"
                         href="/news/Apr-9-26"
