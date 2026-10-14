@@ -40,11 +40,15 @@ const Main = () => {
                     w-screen
                     flex
                     flex-col
-                    justify-center
+                    justify-start
+                    md:justify-center
                     items-center
                     px-8
                     md:px-0
+                    pt-32
+                    pb-12
                     md:pt-12
+                    md:pb-0
                 "
             >
                 <div className="hidden md:grid md:grid-cols-[3fr_2fr] md:items-center w-full max-w-[1440px] md:gap-10">
