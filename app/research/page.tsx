@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { font_head, font_med } from "@/app/fonts";
 import ResearchList from "@/app/components/research/ResearchList";
 import Pipeline from "@/app/components/research/Pipeline";
-import { RESEARCH_COLLABORATORS } from "@/lib/research";
+import LogoRow, { LOGOS } from "@/app/components/research/LogoRow";
 
 export const metadata: Metadata = {
     title: "Research | Voythos",
@@ -36,14 +36,8 @@ const ResearchPage = () => {
                     Collaborators
                 </div>
                 <hr className="text-zinc-500 mt-4" />
-                <div className="grid md:grid-cols-3 grid-cols-1 md:gap-8 gap-4 mt-8">
-                    {RESEARCH_COLLABORATORS.map((name) => (
-                        <div key={name} className="border border-zinc-300 bg-lightbg md:p-8 p-6">
-                            <div className={`text-zinc-800 md:text-xl text-lg ${font_head.className}`}>
-                                {name}
-                            </div>
-                        </div>
-                    ))}
+                <div className="mt-10">
+                    <LogoRow logos={[LOGOS.uchicago, LOGOS.montefiore, LOGOS.lahey]} />
                 </div>
 
                 <div className={`text-3xl text-zinc-800 md:pt-20 pt-12 ${font_med.className}`}>

@@ -10,7 +10,7 @@ import ScrollReveal from "../ScrollReveal";
 import ResearchList from "../research/ResearchList";
 import Pipeline from "../research/Pipeline";
 import Recognition from "../research/Recognition";
-import { RESEARCH_COLLABORATORS } from "@/lib/research";
+import LogoRow, { LOGOS } from "../research/LogoRow";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -388,175 +388,23 @@ const Main = () => {
                 <div className={`flex flex-col text-zinc-800 md:text-4xl text-3xl md:pt-20 pt-10 ${font_head.className}`}>
                     Partners
                 </div>
-                <div className="grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-8 pt-10">
-                    <div className="flex flex-col">
-                        <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase">
-                            Research collaborators
-                        </div>
-                        {RESEARCH_COLLABORATORS.map((name) => (
-                            <div key={name} className={`text-zinc-800 md:text-xl text-lg pt-3 ${font_med.className}`}>
-                                {name}
-                            </div>
-                        ))}
+                <div className="flex flex-col pt-10">
+                    <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase pb-6">
+                        Research collaborators
                     </div>
-                    <div className="flex flex-col">
-                        <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase">
-                            Data partners
-                        </div>
-                        <div className={`text-zinc-800 md:text-xl text-lg pt-3 ${font_med.className}`}>
-                            Mayo Clinic Platform
-                        </div>
-                        <div className={`text-zinc-800 md:text-xl text-lg pt-3 ${font_med.className}`}>
-                            Northwestern Medicine
-                        </div>
-                    </div>
+                    <LogoRow logos={[LOGOS.uchicago, LOGOS.montefiore, LOGOS.lahey]} />
                 </div>
-                <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase md:pt-16 pt-12">
-                    Supported by
+                <div className="flex flex-col md:pt-14 pt-12">
+                    <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase pb-6">
+                        Data partners
+                    </div>
+                    <LogoRow logos={[LOGOS.mayo, LOGOS.northwestern]} />
                 </div>
-                <div className="hidden md:flex flex-row justify-between items-center pt-8">
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.forumvc.com/">
-                            <Image 
-                                src='/images/forum.svg'
-                                alt="Forum Ventures"
-                                height={150}
-                                width={150}
-                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                            />
-                        </a>
+                <div className="flex flex-col md:pt-14 pt-12">
+                    <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase pb-6">
+                        Supported by
                     </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://news.nm.org/techstars-and-northwestern-medicine-announce-inaugural-class/">
-                            <Image 
-                                src='/images/northwestern.svg'
-                                alt="Northwestern Medicine"
-                                height={160}
-                                width={160}
-                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                            />
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.techstars.com/accelerators/northwestern-medicine-healthcare">
-                            <Image 
-                                src='/images/techstars.svg'
-                                alt="techstars"
-                                height={150}
-                                width={150}
-                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                            />
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://lifexglobal.com/accelerator/">
-                            <Image 
-                                src='/images/lifex.svg'
-                                alt="LifeX"
-                                height={150}
-                                width={150}
-                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                            />
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://sciencecenter.org/programs/capital-readiness">
-                            <Image 
-                                src='/images/scicenter.svg'
-                                alt="Science Center"
-                                height={80}
-                                width={80}
-                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                            />
-                        </a>
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://www.mayoclinicplatform.org/">
-                            <Image
-                                src='/images/mayoclinic.svg'
-                                alt="Mayo Clinic"
-                                height={160}
-                                width={160}
-                                className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                            />
-                        </a>
-                    </div>
-                </div>
-                <div className="md:hidden">
-                    <div className="flex flex-row justify-between pt-12">
-                        <div className="px-3">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.forumvc.com/">
-                                <Image 
-                                    src='/images/forum.svg'
-                                    alt="Forum Ventures"
-                                    height={100}
-                                    width={100}
-                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                                />
-                            </a>
-                        </div>
-                        <div className="px-3">
-                            <a target="_blank" rel="noopener noreferrer" href="https://news.nm.org/techstars-and-northwestern-medicine-announce-inaugural-class/">
-                                <Image 
-                                    src='/images/northwestern.svg'
-                                    alt="Northwestern Medicine"
-                                    height={160}
-                                    width={160}
-                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                    <div className="flex flex-row gap-6 pt-12">
-                        <div className="px-2">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.techstars.com/accelerators/northwestern-medicine-healthcare">
-                                <Image 
-                                    src='/images/techstars.svg'
-                                    alt="techstars"
-                                    height={130}
-                                    width={130}
-                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                                />
-                            </a>
-                        </div>
-                        <div className="px-3 -mt-1">
-                            <a target="_blank" rel="noopener noreferrer" href="https://lifexglobal.com/accelerator/">
-                                <Image 
-                                    src='/images/lifex.svg'
-                                    alt="LifeX"
-                                    height={100}
-                                    width={100}
-                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                    <div className="pt-12">
-                        <div className="px-3">
-                            <a target="_blank" rel="noopener noreferrer" href="https://sciencecenter.org/programs/capital-readiness">
-                                <Image 
-                                    src='/images/scicenter.svg'
-                                    alt="Science Center"
-                                    height={80}
-                                    width={80}
-                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                                />
-                            </a>
-                        </div>
-                    </div>
-                    <div className="pt-12">
-                        <div className="px-3">
-                            <a target="_blank" rel="noopener noreferrer" href="https://www.mayoclinicplatform.org/">
-                                <Image
-                                    src='/images/mayoclinic.svg'
-                                    alt="Mayo Clinic"
-                                    height={160}
-                                    width={160}
-                                    className="bg-cover cursor-pointer hover:opacity-60 transition duration-200 ease-in"
-                                />
-                            </a>
-                        </div>
-                    </div>
+                    <LogoRow logos={[LOGOS.forum, LOGOS.techstars, LOGOS.lifex, LOGOS.scicenter]} />
                 </div>
                 </ScrollReveal>
             </section>

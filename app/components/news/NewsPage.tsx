@@ -104,8 +104,8 @@ const NewsPage: React.FC<NewsPageProps> = ({
                             src={resolved.src}
                             alt="News Media"
                             height={750}
-                            width={750}
-                            className="bg-cover"
+                            width={1000}
+                            className="bg-cover w-full h-auto max-w-[750px]"
                         />
                     )}
                 </div>

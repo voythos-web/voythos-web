@@ -17,7 +17,7 @@ export const RESEARCH: ResearchItem[] = [
         format: "Rapid-fire paper",
         meeting: "New England Society for Vascular Surgery, 53rd Annual Meeting",
         date: "October 2026",
-        title: "Risk Prevention Model for Acute Type B Aortic Dissection",
+        title: "Development of a Risk Prevention Model for Intervention in Acute Type B Aortic Dissection",
         authors:
             "Doulamis I, Overtchouk P, Fernandes L, Khan S, Graves J, Lipsitz E, Makoid J, Indes J",
         collaborators: "Lahey Hospital & Medical Center · Montefiore Medical Center · UMass Chan Medical School",
@@ -31,6 +31,8 @@ export const RESEARCH: ResearchItem[] = [
         title: "Machine Learning Prediction of Renal Malperfusion After Acute Type B Aortic Dissection",
         authors: "Khan S, Overtchouk P, Makoid J, Graves J, Milner R",
         collaborators: "The University of Chicago Medicine",
+        href: "/images/news/mvss-2026-poster.jpg",
+        linkLabel: "View poster",
     },
 ];
 
