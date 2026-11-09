@@ -105,6 +105,7 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+                <NavItem href="/research" currentPage={pathname} isScrolled={isScrolled}>Research</NavItem>
                 <NavItem href="/#company" currentPage={pathname} isScrolled={isScrolled}>Company</NavItem>
                 <NavItem href="/news" currentPage={pathname} isScrolled={isScrolled}>News</NavItem>
             </div>
@@ -194,6 +195,15 @@ const Navbar = () => {
                         >
                                 Company
                         </NavItem>
+                        <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
+                    </div>
+                    <hr className="mx-4 text-zinc-300"/>
+
+                    <div className="flex flex-row justify-between pr-4 group" onClick={() => {
+                        router.push('/research');
+                        setIsMenuOpen(false);
+                    }}>
+                        <NavItem href="/research" currentPage={pathname} isScrolled={isScrolled} onClick={() => setIsMenuOpen(false)}>Research</NavItem>
                         <MdArrowForwardIos size={20} className="text-zinc-800 mt-2"/>
                     </div>
                     <hr className="mx-4 text-zinc-300"/>

@@ -7,7 +7,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 
 interface NewsPageProps {
     heading: string;
-    media: string; // image path, YouTube video ID/URL, or Vimeo URL/ID
+    media?: string; // image path, YouTube video ID/URL, or Vimeo URL/ID
     bodytext: string;
     href?: string;
     nextpage: string;
@@ -65,7 +65,7 @@ const NewsPage: React.FC<NewsPageProps> = ({
     gallery
 }) => {
     const router = useRouter();
-    const resolved = resolveMedia(media);
+    const resolved = media ? resolveMedia(media) : null;
 
     return (
         <div className="flex flex-col md:mt-32 mt-24 md:mx-64 mx-4">
@@ -76,6 +76,7 @@ const NewsPage: React.FC<NewsPageProps> = ({
                 <div className={`md:text-5xl text-3xl text-zinc-800 ${font_head.className}`}>
                     {heading}
                 </div>
+                {resolved && (
                 <div className="pt-10 w-full flex justify-center">
                     {resolved.kind === "youtube" ? (
                         <div className="w-full aspect-video">
@@ -108,6 +109,7 @@ const NewsPage: React.FC<NewsPageProps> = ({
                         />
                     )}
                 </div>
+                )}
                 <div className="pt-8 md:text-xl text-lg text-zinc-800">
                     {bodytext}
                     {href && (

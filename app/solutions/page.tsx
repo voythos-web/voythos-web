@@ -316,7 +316,7 @@ const SolutionsPage = () => {
                     <div className="md:pt-14 pt-10 grid md:grid-cols-3 gap-6">
                         <div className="bg-white border border-zinc-300 p-6">
                             <div className={`text-zinc-800 md:text-3xl text-2xl ${font_head.className}`}>
-                                500K+
+                                700K+
                             </div>
                             <div className="text-zinc-600 md:text-base text-sm pt-2">
                                 Longitudinal patient records used in training

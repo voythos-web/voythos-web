@@ -7,6 +7,10 @@ import { font_med } from "@/app/fonts";
 import ButtonBody from "../ButtonBody";
 import NewsMain from "../news/NewsMain";
 import ScrollReveal from "../ScrollReveal";
+import ResearchList from "../research/ResearchList";
+import Pipeline from "../research/Pipeline";
+import Recognition from "../research/Recognition";
+import { RESEARCH_COLLABORATORS } from "@/lib/research";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -145,8 +149,65 @@ const Main = () => {
                 </div>
 
                 <div className="text-light/70 md:text-base text-sm text-center md:mt-12 mt-8 max-w-2xl">
-                    Trained on 500,000+ longitudinal patient records. Backed by
+                    Trained on 700,000+ longitudinal patient records. Backed by
                     Mayo Clinic and Northwestern Medicine.
+                </div>
+                </ScrollReveal>
+            </section>
+
+            {/* research */}
+            <section
+                id="research"
+                className="
+                    bg-[url('/images/backgrounds/grid_bg_white2.png')]
+                    bg-cover
+                    h-fit
+                    w-screen
+                    flex
+                    flex-col
+                    md:px-20
+                    px-4
+                    md:pb-20
+                    pb-10
+                "
+            >
+                <ScrollReveal className="w-full flex flex-col max-w-[1200px] mx-auto">
+                <div className={`text-zinc-800 md:text-4xl text-2xl md:pt-20 pt-10 ${font_head.className}`}>
+                    Research
+                </div>
+                <div className="text-zinc-700 md:text-xl text-lg pt-4 max-w-3xl">
+                    Our models are developed and reviewed with academic vascular surgeons, and the results are presented at the meetings they attend.
+                </div>
+                <div className="pt-10">
+                    <ResearchList />
+                </div>
+                <div className="flex justify-end pt-8">
+                    <ButtonBody href="/research" text="All research" colorprimary/>
+                </div>
+                </ScrollReveal>
+            </section>
+
+            {/* pipeline */}
+            <section
+                id="pipeline"
+                className="
+                    bg-white
+                    h-fit
+                    w-screen
+                    flex
+                    flex-col
+                    md:px-20
+                    px-4
+                    md:pb-20
+                    pb-10
+                "
+            >
+                <ScrollReveal className="w-full flex flex-col max-w-[1200px] mx-auto">
+                <div className={`text-zinc-800 md:text-4xl text-2xl md:pt-20 pt-10 ${font_head.className}`}>
+                    Pipeline
+                </div>
+                <div className="pt-8">
+                    <Pipeline />
                 </div>
                 </ScrollReveal>
             </section>
@@ -193,7 +254,7 @@ const Main = () => {
                         <div className="text-zinc-800 text-xl">
                             Leadership
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-[repeat(3,minmax(220px,220px))] gap-6 md:gap-10 pt-5 justify-start">
+                        <div className="grid grid-cols-2 md:grid-cols-[repeat(4,minmax(220px,220px))] gap-6 md:gap-10 pt-5 justify-start">
                             <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
                                     src='/images/about/sophia.svg'
@@ -209,7 +270,7 @@ const Main = () => {
                                     Co-Founder and CMO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
-                                    Assistant Professor, Cardiothoracic and Vascular Surgery, UT Health
+                                    Vascular Surgeon, UPMC. Built the oncologic vascular surgery program at UTHealth Houston.
                                 </div>
                             </div>
                             <div className="flex flex-col md:w-[220px] w-[150px]">
@@ -227,7 +288,25 @@ const Main = () => {
                                     Co-Founder and CEO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
-                                    Prev. Digital Health Sales, Johnson & Johnson
+                                    15 years in medtech, including robotics and digital surgery at Johnson & Johnson. MBA, Rice University.
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:w-[220px] w-[150px]">
+                                <Image 
+                                    src='/images/about/pavel.jpg'
+                                    alt="Pavel Overtchouk, MD"
+                                    height={200}
+                                    width={200}
+                                    className="bg-cover"
+                                />
+                                <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
+                                    Pavel Overtchouk, MD
+                                </div>
+                                <div className="text-zinc-800 text-base">
+                                    Co-Founder and Head of Science
+                                </div>
+                                <div className="text-zinc-800 text-base pt-2">
+                                    Interventional cardiologist turned AI engineer. Early author on AI in interventional cardiology.
                                 </div>
                             </div>
                             <div className="flex flex-col md:w-[220px] w-[150px]">
@@ -307,9 +386,35 @@ const Main = () => {
             >
                 <ScrollReveal className="w-full flex flex-col">
                 <div className={`flex flex-col text-zinc-800 md:text-4xl text-3xl md:pt-20 pt-10 ${font_head.className}`}>
+                    Partners
+                </div>
+                <div className="grid md:grid-cols-2 grid-cols-1 md:gap-16 gap-8 pt-10">
+                    <div className="flex flex-col">
+                        <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase">
+                            Research collaborators
+                        </div>
+                        {RESEARCH_COLLABORATORS.map((name) => (
+                            <div key={name} className={`text-zinc-800 md:text-xl text-lg pt-3 ${font_med.className}`}>
+                                {name}
+                            </div>
+                        ))}
+                    </div>
+                    <div className="flex flex-col">
+                        <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase">
+                            Data partners
+                        </div>
+                        <div className={`text-zinc-800 md:text-xl text-lg pt-3 ${font_med.className}`}>
+                            Mayo Clinic Platform
+                        </div>
+                        <div className={`text-zinc-800 md:text-xl text-lg pt-3 ${font_med.className}`}>
+                            Northwestern Medicine
+                        </div>
+                    </div>
+                </div>
+                <div className="text-zinc-500 text-xs tracking-[0.18em] font-mono uppercase md:pt-16 pt-12">
                     Supported by
                 </div>
-                <div className="hidden md:flex flex-row justify-between items-center pt-14">
+                <div className="hidden md:flex flex-row justify-between items-center pt-8">
                     <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://www.forumvc.com/">
                             <Image 
@@ -457,6 +562,32 @@ const Main = () => {
             </section>
 
 
+            {/* recognition */}
+            <section
+                id="recognition"
+                className="
+                    h-fit
+                    w-screen
+                    flex
+                    flex-col
+                    md:px-20
+                    px-4
+                    md:pb-20
+                    pb-10
+                    bg-light
+                    md:bg-none
+                "
+            >
+                <ScrollReveal className="w-full flex flex-col">
+                <div className={`flex flex-col text-zinc-800 md:text-4xl text-3xl md:pt-10 pt-10 ${font_head.className}`}>
+                    Recognition
+                </div>
+                <div className="pt-10">
+                    <Recognition />
+                </div>
+                </ScrollReveal>
+            </section>
+
             {/* news & insights */}
             <section
                 id="News"
@@ -479,21 +610,21 @@ const Main = () => {
                 <div className="flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch md:pt-10 pt-12 px-2">
                         <NewsMain
-                            text="Voythos presents at the 2026 MedTech Innovator Radar Forum"
-                            date="April 2026"
-                            href="/news/Apr-9-26"
+                            text="Voythos selected for the SVS Foundation Enrico Ascher Vascular Innovation Institute"
+                            date="October 2026"
+                            href="/news/Oct-28-26"
                             buttontext="Read more"
                         />
                         <NewsMain
-                            text="Voythos pitches at Techstars Northwestern Medicine Demo Day"
-                            date="June 2025"
-                            href="/news/Jun-3-25"
+                            text="Voythos research presented at the 2026 NESVS Annual Meeting"
+                            date="October 2026"
+                            href="/news/Oct-25-26"
                             buttontext="Read more"
                         />
                         <NewsMain
-                            text="Voythos featured in Mayo Clinic Platform_Accelerate showcase"
-                            date="May 2025"
-                            href="/news/May-3-25"
+                            text="Voythos selected for TechCrunch Startup Battlefield 200"
+                            date="October 2026"
+                            href="/news/Oct-13-26"
                             buttontext="Read more"
                         />
                     </div>

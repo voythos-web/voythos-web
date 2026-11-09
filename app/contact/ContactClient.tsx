@@ -25,8 +25,21 @@ const ContactClient = () => {
                     <div className={`text-zinc-800 md:text-3xl text-2xl`}>
                         Email
                     </div>
-                    <div className="pt-4"> 
-                        <ButtonBody href="mailto:joe@voythos.ai" text="Send us a message" colorprimary/>
+                    <div className="flex flex-col gap-3 pt-4">
+                        {[
+                            { label: "Health systems and clinical partners", subject: "Clinical partnership" },
+                            { label: "Investors", subject: "Investor inquiry" },
+                            { label: "Press", subject: "Press inquiry" },
+                        ].map((r) => (
+                            <a
+                                key={r.label}
+                                href={`mailto:joe@voythos.io?subject=${encodeURIComponent(r.subject)}`}
+                                className="group flex flex-row justify-between items-center border border-zinc-300 bg-white/70 px-5 py-3 hover:border-primary transition duration-200"
+                            >
+                                <span className="text-zinc-800 md:text-lg text-base">{r.label}</span>
+                                <span aria-hidden className="text-primary group-hover:translate-x-1 transition">→</span>
+                            </a>
+                        ))}
                     </div>
                     <div className={`text-zinc-800 pt-10 md:text-3xl text-2xl`}>
                         Mailing list

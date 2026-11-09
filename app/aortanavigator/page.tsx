@@ -479,7 +479,7 @@ const AortaNavigatorSalesPage = () => {
 
                     <div className="grid md:grid-cols-4 grid-cols-2 gap-5 mt-12">
                         {[
-                            { n: "500K+", l: "patient records used to develop and validate the models" },
+                            { n: "700K+", l: "patient records used to develop and validate the models" },
                             { n: "30+", l: "health systems represented in the training data" },
                             { n: "0.81", l: "validated AUC for AAA rupture risk prioritization" },
                             { n: "2", l: "data partners: Mayo Clinic Platform and Northwestern Medicine" },

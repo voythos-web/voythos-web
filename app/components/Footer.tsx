@@ -51,6 +51,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
+                    <Link href="/research" className="hover:opacity-60 transition duration-200">Research</Link>
                     <Link href="/#company" className="hover:opacity-60 transition duration-200">Company</Link>
                     <Link href="/news" className="hover:opacity-60 transition duration-200">News</Link>
                     <Link href="/blog" className="hover:opacity-60 transition duration-200">Blog</Link>
@@ -68,6 +69,7 @@ const Footer = () => {
                     <Link href="/pythia" className="hover:opacity-60 transition duration-200">
                         Pythia <span className="text-primary/80 text-xs tracking-[0.2em] font-mono ml-1 align-middle">IN DEV</span>
                     </Link>
+                    <Link href="/research" className="hover:opacity-60 transition duration-200">Research</Link>
                     <Link href="/#company" className="hover:opacity-60 transition duration-200">Company</Link>
                     <Link href="/news" className="hover:opacity-60 transition duration-200">News</Link>
                     <Link href="/blog" className="hover:opacity-60 transition duration-200">Blog</Link>

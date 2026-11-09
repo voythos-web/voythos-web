@@ -19,6 +19,26 @@ const NewsClient = () => {
                 <hr className="text-zinc-500 mt-4"/>
                 <div className="grid md:grid-cols-3 grid-cols-1 md:gap-8 gap-4 mt-8 max-w-full mb-10">
                     <NewsCard
+                        text="Voythos selected for the SVS Foundation Enrico Ascher Vascular Innovation Institute"
+                        date="October 28, 2026"
+                        href="/news/Oct-28-26"
+                    />
+                    <NewsCard
+                        text="Voythos research presented at the 2026 NESVS Annual Meeting"
+                        date="October 25, 2026"
+                        href="/news/Oct-25-26"
+                    />
+                    <NewsCard
+                        text="Voythos selected for TechCrunch Startup Battlefield 200"
+                        date="October 13, 2026"
+                        href="/news/Oct-13-26"
+                    />
+                    <NewsCard
+                        text="Voythos presents research on renal malperfusion after acute type B dissection at MVSS 2026"
+                        date="September 17, 2026"
+                        href="/news/Sep-17-26"
+                    />
+                    <NewsCard
                         text="Voythos announces a data partnership with Northwestern Medicine Ventures and Innovation"
                         date="July 13, 2026"
                         href="/news/Jul-13-26"
