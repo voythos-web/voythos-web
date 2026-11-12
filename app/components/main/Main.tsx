@@ -1,6 +1,7 @@
 'use client';
 
 import ParticleAorta from "./ParticleAorta";
+import VesselField from "./VesselField";
 import Button from "../Button";
 import { font_head } from "@/app/fonts";
 import { font_med } from "@/app/fonts";
@@ -40,6 +41,7 @@ const Main = () => {
                 className="
                     bg-[url('/images/backgrounds/grid_bg_blue.png')]
                     bg-cover
+                    relative
                     min-h-screen
                     w-screen
                     flex
@@ -55,7 +57,8 @@ const Main = () => {
                     md:pb-0
                 "
             >
-                <div className="hidden md:grid md:grid-cols-[3fr_2fr] md:items-center w-full max-w-[1440px] md:gap-10">
+                <VesselField className="absolute inset-0 w-full h-full" />
+                <div className="relative z-10 hidden md:grid md:grid-cols-[3fr_2fr] md:items-center w-full max-w-[1440px] md:gap-10">
                     <div className="flex flex-col md:pl-20 md:pt-20 max-w-[860px]">
                         <div className={`text-indigo-50 md:text-6xl/tight lg:text-7xl/tight text-5xl ${font_head.className}`}>
                             The precision medicine engine for vascular disease.
@@ -78,7 +81,7 @@ const Main = () => {
                     </div>
                 </div>
 
-                <div className="md:hidden w-full">
+                <div className="relative z-10 md:hidden w-full">
                     <div className="flex flex-col">
                         <div className={`text-indigo-50 text-5xl ${font_head.className}`}>
                             The precision medicine engine for vascular disease.
