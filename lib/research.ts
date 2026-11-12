@@ -21,8 +21,8 @@ export const RESEARCH: ResearchItem[] = [
         authors:
             "Doulamis I, Overtchouk P, Fernandes L, Khan S, Graves J, Lipsitz E, Makoid J, Indes J",
         collaborators: "Lahey Hospital & Medical Center · Montefiore Medical Center · UMass Chan Medical School",
-        href: "https://nesvs.org/wp-content/uploads/2026/06/nesvs-2026-annual-meeting-program.pdf",
-        linkLabel: "Meeting program",
+        href: "https://www.jvascsurg.org/article/S0741-5214(26)01474-6/fulltext",
+        linkLabel: "Abstract in JVS",
     },
     {
         format: "E-poster",
