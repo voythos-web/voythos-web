@@ -10,7 +10,10 @@ import { useEffect, useRef } from 'react';
  */
 
 type Pt = { x: number; y: number };
-type Branch = { pts: Pt[]; w: number; depth: number; delay: number; len: number };
+type Branch = { pts: Pt[]; w: number; depth: number; delay: number; len: number; layer: number };
+
+// vessels are split across depth layers that drift in and out of focus
+const LAYERS = 3;
 type Pulse = { b: number; t: number; speed: number; size: number };
 
 // simple seeded rng so the layout is stable across renders
@@ -26,7 +29,7 @@ function buildTrees(W: number, H: number, rand: () => number): Branch[] {
     const branches: Branch[] = [];
     const unit = Math.max(W, H);
 
-    const grow = (start: Pt, angle: number, w: number, depth: number, delay: number) => {
+    const grow = (start: Pt, angle: number, w: number, depth: number, delay: number, layer: number) => {
         if (depth > 5 || w < 0.45) return;
         const pts: Pt[] = [start];
         const segs = 18 + Math.floor(rand() * 14);
@@ -43,18 +46,18 @@ function buildTrees(W: number, H: number, rand: () => number): Branch[] {
         }
         let len = 0;
         for (let i = 1; i < pts.length; i++) len += Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y);
-        branches.push({ pts, w, depth, delay, len });
+        branches.push({ pts, w, depth, delay, len, layer });
 
         const end = pts[pts.length - 1];
         const kids = depth < 2 ? 2 : rand() < 0.5 ? 2 : 1;
         for (let k = 0; k < kids; k++) {
             const spread = (0.35 + rand() * 0.35) * (k === 0 ? 1 : -1);
-            grow(end, a + spread, w * (0.62 + rand() * 0.12), depth + 1, delay + 0.35);
+            grow(end, a + spread, w * (0.62 + rand() * 0.12), depth + 1, delay + 0.35, layer);
         }
         // occasional side branch from the middle of a segment
         if (depth < 3 && rand() < 0.35) {
             const mid = pts[Math.floor(pts.length * (0.35 + rand() * 0.3))];
-            grow(mid, a + (rand() < 0.5 ? 1 : -1) * (0.9 + rand() * 0.4), w * 0.45, depth + 2, delay + 0.2);
+            grow(mid, a + (rand() < 0.5 ? 1 : -1) * (0.9 + rand() * 0.4), w * 0.45, depth + 2, delay + 0.2, layer);
         }
     };
 
@@ -66,7 +69,7 @@ function buildTrees(W: number, H: number, rand: () => number): Branch[] {
         [{ x: 0.72 * W, y: -0.02 * H }, 1.9],
         [{ x: 1.02 * W, y: 0.9 * H }, Math.PI - 0.45],
     ];
-    trunks.forEach(([p, a], i) => grow(p, a, 3.2 + rand() * 1.2, 0, i * 0.15));
+    trunks.forEach(([p, a], i) => grow(p, a, 3.2 + rand() * 1.2, 0, i * 0.15, i % LAYERS));
     return branches;
 }
 
@@ -87,13 +90,15 @@ function pointAt(b: Branch, t: number): Pt {
 }
 
 export default function VesselField({ className = '' }: { className?: string }) {
-    const ref = useRef<HTMLCanvasElement>(null);
+    const refs = useRef<(HTMLCanvasElement | null)[]>([]);
 
     useEffect(() => {
-        const canvas = ref.current;
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+        const canvases = refs.current.filter(Boolean) as HTMLCanvasElement[];
+        if (canvases.length !== LAYERS) return;
+        const ctxs = canvases.map((c) => c.getContext('2d'));
+        if (ctxs.some((c) => !c)) return;
+        const canvas = canvases[0];
+        let ctx = ctxs[0] as CanvasRenderingContext2D;
 
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let W = 0, H = 0, dpr = 1;
@@ -108,9 +113,11 @@ export default function VesselField({ className = '' }: { className?: string }) 
             dpr = Math.min(window.devicePixelRatio || 1, 2);
             W = rect.width;
             H = rect.height;
-            canvas.width = Math.round(W * dpr);
-            canvas.height = Math.round(H * dpr);
-            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            canvases.forEach((c, i) => {
+                c.width = Math.round(W * dpr);
+                c.height = Math.round(H * dpr);
+                (ctxs[i] as CanvasRenderingContext2D).setTransform(dpr, 0, 0, dpr, 0, 0);
+            });
             const rand = rng(7);
             branches = buildTrees(W, H, rand);
             pulses = [];
@@ -131,10 +138,11 @@ export default function VesselField({ className = '' }: { className?: string }) 
         };
         const prand = rng(99);
 
-        const drawVessels = (grow: number) => {
+        const drawVessels = (grow: number, layer: number) => {
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
             for (const b of branches) {
+                if (b.layer !== layer) continue;
                 const local = Math.max(0, Math.min(1, (grow - b.delay) / 0.9));
                 if (local <= 0) continue;
                 const n = Math.max(2, Math.ceil(b.pts.length * local));
@@ -157,11 +165,12 @@ export default function VesselField({ className = '' }: { className?: string }) 
             }
         };
 
-        const drawPulses = (dt: number, grow: number) => {
+        const drawPulses = (dt: number, grow: number, layer: number) => {
             ctx.globalCompositeOperation = 'lighter';
             for (let i = 0; i < pulses.length; i++) {
                 const p = pulses[i];
                 const b = branches[p.b];
+                if (b.layer !== layer) continue;
                 if (grow - b.delay < 0.9) continue;
                 p.t += (p.speed * dt) / Math.max(0.4, b.len / 400);
                 if (p.t >= 1) {
@@ -206,31 +215,48 @@ export default function VesselField({ className = '' }: { className?: string }) 
             const elapsed = (now - start) / 1000;
             // whole tree grows in over ~3s, then holds
             const grow = Math.min(elapsed * 1.4, 10);
-            ctx.clearRect(0, 0, W, H);
-            // very slow breathing drift on the whole field
-            ctx.save();
             const s = 1 + 0.012 * Math.sin(elapsed * 0.25);
-            ctx.translate(W / 2, H / 2);
-            ctx.scale(s, s);
-            ctx.translate(-W / 2, -H / 2);
-            drawVessels(grow);
-            drawPulses(dt, grow);
-            ctx.restore();
-            clearTextArea();
+            for (let l = 0; l < LAYERS; l++) {
+                ctx = ctxs[l] as CanvasRenderingContext2D;
+                ctx.clearRect(0, 0, W, H);
+                // very slow breathing drift on the whole field
+                ctx.save();
+                ctx.translate(W / 2, H / 2);
+                ctx.scale(s, s);
+                ctx.translate(-W / 2, -H / 2);
+                drawVessels(grow, l);
+                drawPulses(dt, grow, l);
+                ctx.restore();
+                clearTextArea();
+                // each layer racks in and out of focus on its own slow cycle,
+                // offset so one layer is usually sharp while another goes soft
+                const f = 0.5 + 0.5 * Math.sin(elapsed * 0.32 + (l * Math.PI * 2) / LAYERS);
+                const blur = 0.2 + 6 * f * f;
+                canvases[l].style.filter = `blur(${blur.toFixed(2)}px)`;
+                canvases[l].style.opacity = (1 - 0.35 * f).toFixed(3);
+            }
             if (visible) raf = requestAnimationFrame(frame);
         };
 
         setup();
+        const drawStatic = () => {
+            for (let l = 0; l < LAYERS; l++) {
+                ctx = ctxs[l] as CanvasRenderingContext2D;
+                ctx.clearRect(0, 0, W, H);
+                drawVessels(10, l);
+                clearTextArea();
+                canvases[l].style.filter = l === 1 ? 'blur(3px)' : 'none';
+            }
+        };
         if (reduce) {
-            drawVessels(10);
-            clearTextArea();
+            drawStatic();
         } else {
             raf = requestAnimationFrame(frame);
         }
 
         const onResize = () => {
             setup();
-            if (reduce) { drawVessels(10); clearTextArea(); }
+            if (reduce) drawStatic();
             else start = performance.now() - 10000; // skip the grow-in on resize
         };
         window.addEventListener('resize', onResize);
@@ -264,5 +290,17 @@ export default function VesselField({ className = '' }: { className?: string }) 
         };
     }, []);
 
-    return <canvas ref={ref} aria-hidden className={`pointer-events-none ${className}`} />;
+    return (
+        <div aria-hidden className={`pointer-events-none ${className}`}>
+            {Array.from({ length: LAYERS }, (_, i) => (
+                <canvas
+                    key={i}
+                    ref={(el) => {
+                        refs.current[i] = el;
+                    }}
+                    className="absolute inset-0 w-full h-full"
+                />
+            ))}
+        </div>
+    );
 }
