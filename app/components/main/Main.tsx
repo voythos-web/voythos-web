@@ -260,24 +260,6 @@ const Main = () => {
                         <div className="grid grid-cols-2 md:grid-cols-[repeat(4,minmax(220px,220px))] gap-6 md:gap-10 pt-5 justify-start">
                             <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
-                                    src='/images/about/sophia.svg'
-                                    alt="Sophia Khan"
-                                    height={200}
-                                    width={200}
-                                    className="bg-cover"
-                                />
-                                <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
-                                    Sophia Khan, MD
-                                </div>
-                                <div className="text-zinc-800 text-base">
-                                    Co-Founder and CMO
-                                </div>
-                                <div className="text-zinc-800 text-base pt-2">
-                                    Vascular Surgeon, UPMC. Built the oncologic vascular surgery program at UTHealth Houston.
-                                </div>
-                            </div>
-                            <div className="flex flex-col md:w-[220px] w-[150px]">
-                                <Image 
                                     src='/images/about/joe.svg'
                                     alt="Joe Makoid"
                                     height={200}
@@ -296,6 +278,24 @@ const Main = () => {
                             </div>
                             <div className="flex flex-col md:w-[220px] w-[150px]">
                                 <Image 
+                                    src='/images/about/sophia.svg'
+                                    alt="Sophia Khan"
+                                    height={200}
+                                    width={200}
+                                    className="bg-cover"
+                                />
+                                <div className={`text-zinc-800 text-lg pt-4 ${font_med.className}`}>
+                                    Sophia Khan, MD
+                                </div>
+                                <div className="text-zinc-800 text-base">
+                                    Co-Founder and CMO
+                                </div>
+                                <div className="text-zinc-800 text-base pt-2">
+                                    Vascular Surgeon, UPMC. Built the oncologic vascular surgery program at UTHealth Houston.
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:w-[220px] w-[150px]">
+                                <Image 
                                     src='/images/about/pavel.jpg'
                                     alt="Pavel Overtchouk, MD"
                                     height={200}
@@ -306,7 +306,7 @@ const Main = () => {
                                     Pavel Overtchouk, MD
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    Co-Founder and Head of Science
+                                    Head of Data Science
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Interventional cardiologist turned AI engineer. Early author on AI in interventional cardiology.
@@ -324,7 +324,7 @@ const Main = () => {
                                     Jordan Graves
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    CTO
+                                    Co-Founder and CTO
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Prev. Medical AI/ML Development
