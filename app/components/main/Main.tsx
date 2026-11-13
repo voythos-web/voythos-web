@@ -306,7 +306,7 @@ const Main = () => {
                                     Pavel Overtchouk, MD
                                 </div>
                                 <div className="text-zinc-800 text-base">
-                                    Head of Data Science
+                                    Co-Founder and Head of Data Science
                                 </div>
                                 <div className="text-zinc-800 text-base pt-2">
                                     Interventional cardiologist turned AI engineer. Early author on AI in interventional cardiology.
