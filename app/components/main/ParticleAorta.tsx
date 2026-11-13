@@ -2,8 +2,8 @@
 
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { useEffect, useMemo, useRef } from 'react';
+import { OrbitControls } from '@react-three/drei';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 /*
  * Entrance: the aorta fills in from the arch down to the iliacs, like a
@@ -12,9 +12,24 @@ import { useEffect, useMemo, useRef } from 'react';
  * sharp. Paced to match the slow vessel background behind it.
  */
 
-const START_DELAY = 0.8; // seconds before the first particles appear
-const SWEEP = 3.2; // seconds for the fill to travel from top to bottom
-const SETTLE = 2.4; // seconds for each particle to ease into place
+const START_DELAY = 0; // starts as soon as the points are ready
+const SWEEP = 2.2; // seconds for the fill to travel from top to bottom
+const SETTLE = 1.6; // seconds for each particle to ease into place
+
+// Pre-sampled surface points from /models/aorta.glb (5% of vertices, ~0.4 MB
+// instead of the 22 MB model), so the entrance can start right away.
+const POINTS_URL = '/models/aorta-points.bin';
+let pointsPromise: Promise<Float32Array> | null = null;
+function loadPoints() {
+    if (!pointsPromise && typeof window !== 'undefined') {
+        pointsPromise = fetch(POINTS_URL)
+            .then((r) => r.arrayBuffer())
+            .then((b) => new Float32Array(b));
+    }
+    return pointsPromise;
+}
+// start the download as soon as this module loads
+loadPoints();
 
 const vertexShader = /* glsl */ `
     uniform float uTime;
@@ -56,8 +71,7 @@ const fragmentShader = /* glsl */ `
     }
 `;
 
-function AortaParticles() {
-    const { nodes } = useGLTF('/models/aorta.glb');
+function AortaParticles({ source }: { source: Float32Array }) {
     const pointsRef = useRef<THREE.Points>(null);
     const { size, gl } = useThree();
     const reduce = useMemo(
@@ -66,18 +80,8 @@ function AortaParticles() {
     );
 
     const geometry = useMemo(() => {
-        const meshes = Object.values(nodes).filter((node: any) => node.isMesh && node.geometry);
         const spreadFactor = 2.0;
-        const samplingRate = 0.05; // 5% of points
-
-        const final: number[] = [];
-        meshes.forEach((mesh: any) => {
-            const source = mesh.geometry.attributes.position.array;
-            for (let i = 0; i < source.length; i += 3) {
-                if (Math.random() > samplingRate) continue;
-                final.push(source[i] * spreadFactor, source[i + 1] * spreadFactor, source[i + 2] * spreadFactor);
-            }
-        });
+        const final = Array.from(source, (v) => v * spreadFactor);
 
         // model z is the vertical axis on screen (mesh is rotated -90deg on x)
         let zMin = Infinity, zMax = -Infinity, span = 0;
@@ -85,8 +89,12 @@ function AortaParticles() {
             zMin = Math.min(zMin, final[i + 2]);
             zMax = Math.max(zMax, final[i + 2]);
         }
-        const xs = final.filter((_, i) => i % 3 === 0);
-        span = Math.max(zMax - zMin, Math.max(...xs) - Math.min(...xs));
+        let xMin = Infinity, xMax = -Infinity;
+        for (let i = 0; i < final.length; i += 3) {
+            xMin = Math.min(xMin, final[i]);
+            xMax = Math.max(xMax, final[i]);
+        }
+        span = Math.max(zMax - zMin, xMax - xMin);
 
         const n = final.length / 3;
         const offsets = new Float32Array(n * 3);
@@ -102,7 +110,7 @@ function AortaParticles() {
             offsets[i * 3 + 2] = r * u + span * 0.02; // slight settle downward
 
             const along = (zMax - final[i * 3 + 2]) / Math.max(1e-6, zMax - zMin); // 0 at arch, 1 at iliacs
-            delays[i] = START_DELAY + along * SWEEP + Math.random() * 0.6;
+            delays[i] = START_DELAY + along * SWEEP + Math.random() * 0.4;
         }
 
         const geo = new THREE.BufferGeometry();
@@ -110,7 +118,7 @@ function AortaParticles() {
         geo.setAttribute('aOffset', new THREE.BufferAttribute(offsets, 3));
         geo.setAttribute('aDelay', new THREE.BufferAttribute(delays, 1));
         return geo;
-    }, [nodes]);
+    }, [source]);
 
     const material = useMemo(
         () =>
@@ -134,8 +142,11 @@ function AortaParticles() {
         material.uniforms.uScale.value = (size.height / 2) * gl.getPixelRatio();
     }, [material, size.height, gl]);
 
+    // time from when the points first render, not from canvas mount
+    const t0 = useRef<number | null>(null);
     useFrame(({ clock }, delta) => {
-        const elapsed = clock.getElapsedTime();
+        if (t0.current === null) t0.current = clock.getElapsedTime();
+        const elapsed = clock.getElapsedTime() - t0.current;
         if (!reduce) material.uniforms.uTime.value = elapsed;
         // rotation eases in as the fill completes instead of starting abruptly
         if (pointsRef.current && !reduce) {
@@ -157,10 +168,19 @@ function AortaParticles() {
 }
 
 export default function ParticleAorta() {
+    const [source, setSource] = useState<Float32Array | null>(null);
+    useEffect(() => {
+        let alive = true;
+        loadPoints()?.then((p) => alive && setSource(p));
+        return () => {
+            alive = false;
+        };
+    }, []);
+
     return (
         <div style={{ width: '100%', height: '100%' }}>
             <Canvas camera={{ position: [0, 0, 3], fov: 50 }}>
-                <AortaParticles />
+                {source && <AortaParticles source={source} />}
                 <OrbitControls target={[0, 0, 0]} enableZoom={false} enablePan={false} enableRotate={false} />
             </Canvas>
         </div>
