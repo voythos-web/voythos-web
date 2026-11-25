@@ -200,12 +200,10 @@ const AorticLeakReport = () => {
                         (<em>Journal of the American College of Radiology</em>,
                         2021). The finding was on the image either way. What changed
                         was whether anyone was told to do something about it.
-                        International audits describe an even leakier loop:
-                        incidental AAAs documented in the chart only about 29
-                        percent of the time and communicated to the patient&rsquo;s
-                        own physician only about 15 percent of the time (van
-                        Walraven et al., <em>Journal of Vascular Surgery</em>, 2010;
-                        Canadian data, included as corroboration).
+                        Population-based data describe what happens next: in a
+                        Canadian cohort of 191 incidental AAAs, 29 percent never
+                        received a single follow-up scan (van Walraven et al.,{" "}
+                        <em>Open Medicine</em>, 2011; included as corroboration).
                     </p>
 
                     <TwoStat
@@ -239,23 +237,23 @@ const AorticLeakReport = () => {
                         In practice, they leave.
                     </p>
                     <p className="text-zinc-800 md:text-lg text-base leading-relaxed mt-6">
-                        Adherence to imaging surveillance after EVAR falls from 90
-                        percent in the first year to 58 percent by year four (Newton
-                        et al., <em>JAMA Network Open</em>, 2025; 27,792 US
-                        veterans). In a national Medicare cohort, roughly half of
-                        patients had fallen out of guideline-concordant surveillance
-                        by five years (Schanzer et al.,{" "}
-                        <em>Journal of Vascular Surgery</em>, 2014). Single-center
-                        prospective data are starker still: more than 40 percent of
-                        patients lost to follow-up entirely (Jasinski et al.,{" "}
-                        <em>Aorta</em>, 2017). These are patients with a known
+                        In a national Medicare cohort of 19,962 EVAR patients, half
+                        had been lost to annual imaging follow-up by five years
+                        (Schanzer et al., <em>Journal of Vascular Surgery</em>,
+                        2014). Single-institution data are starker still: 41 percent
+                        of 188 EVAR patients were lost to follow-up entirely (Wu et
+                        al., <em>Journal of Vascular Surgery</em>, 2015). Even in
+                        the VA, where surveillance is covered, adherence starts near
+                        90 percent in the first year and declines with each year
+                        after repair (Newton et al., <em>JAMA Network Open</em>,
+                        2025; 27,792 US veterans). These are patients with a known
                         aneurysm, in a known program, who simply stop coming back.
                     </p>
 
                     <StatCallout
-                        value="90% to 58%"
-                        label="EVAR imaging-surveillance adherence, from the first year to year four"
-                        source="Newton et al., JAMA Network Open, 2025 (27,792 US veterans)"
+                        value="50%"
+                        label="of Medicare EVAR patients were lost to annual imaging follow-up by five years"
+                        source="Schanzer et al., Journal of Vascular Surgery, 2014 (19,962 patients)"
                     />
 
                     <p className="text-zinc-800 md:text-lg text-base leading-relaxed mt-6">
@@ -316,7 +314,8 @@ const AorticLeakReport = () => {
                         By either standard, the patients are there and the screening
                         is not. In one academic health system, of 6,682 patients who
                         were eligible for AAA screening, only 6.9 percent actually
-                        received it (<em>Annals of Vascular Surgery</em>, 2021).
+                        received it within a year (Anjorin et al.,{" "}
+                        <em>Annals of Vascular Surgery</em>, 2022).
                         These are not patients who need to be found in the community.
                         They are already in the system, already have a chart, already
                         came in for something else. They have simply never been
@@ -326,7 +325,7 @@ const AorticLeakReport = () => {
                     <StatCallout
                         value="6.9%"
                         label="of 6,682 screening-eligible patients in one academic health system actually received their AAA screen"
-                        source="Annals of Vascular Surgery, 2021"
+                        source="Anjorin et al., Annals of Vascular Surgery, 2022"
                     />
 
                     <p className="text-zinc-800 md:text-lg text-base leading-relaxed mt-6">
@@ -484,18 +483,18 @@ const AorticLeakReport = () => {
                         <li>Reimerink JJ et al. Systematic review and meta-analysis of population-based mortality from ruptured AAA. <em>Br J Surg.</em> 2013.</li>
                         <li>Wesche et al. 39% of ruptured AAA found incidentally pre-rupture. <em>Ann Vasc Surg.</em> 2024.</li>
                         <li>Standardizing incidental AAA reporting (2.1% to 58%). <em>JACR.</em> 2021.</li>
-                        <li>van Walraven C et al. Incidence, follow-up, outcomes of incidental AAA. <em>J Vasc Surg.</em> 2010.</li>
+                        <li>van Walraven C et al. Radiographic monitoring of incidental abdominal aortic aneurysms: a retrospective population-based cohort study. <em>Open Med.</em> 2011.</li>
                         <li>The Doctors Company. Detecting and addressing incidental findings. 2024.</li>
-                        <li>Newton LE et al. Post-EVAR surveillance adherence (90% to 58%). <em>JAMA Netw Open.</em> 2025.</li>
-                        <li>Schanzer A et al. Long-term post-EVAR surveillance. <em>J Vasc Surg.</em> 2014.</li>
-                        <li>Jasinski PT et al. EVAR follow-up compliance. <em>Aorta.</em> 2017.</li>
+                        <li>Newton LE et al. Imaging surveillance adherence after EVAR at VA hospitals. <em>JAMA Netw Open.</em> 2025.</li>
+                        <li>Schanzer A et al. Follow-up compliance after EVAR in Medicare beneficiaries. <em>J Vasc Surg.</em> 2014.</li>
+                        <li>Wu CY et al. Predictors of compliance with surveillance after EVAR and comparative survival outcomes. <em>J Vasc Surg.</em> 2015.</li>
                         <li>Garg T et al. Incomplete surveillance and outcomes (contrary evidence). <em>JAMA Surg.</em> 2015.</li>
                         <li>UK Small Aneurysm Trial. Sex and rupture risk. 1998 to 1999.</li>
                         <li>Lo RC, Schermerhorn ML et al. Sex, diameter, rupture. <em>J Vasc Surg.</em> 2013.</li>
                         <li>RESCAN collaborators. Growth and rupture of small AAA. <em>JAMA.</em> 2013.</li>
                         <li>USPSTF. AAA screening recommendation. 2019.</li>
                         <li>Society for Vascular Surgery. AAA practice guidelines (Chaikof et al.). <em>J Vasc Surg.</em> 2018.</li>
-                        <li>Underutilization of AAA screening (6.9% of eligible). <em>Ann Vasc Surg.</em> 2021.</li>
+                        <li>Anjorin AC et al. Underutilization of guideline-based AAA screening in an academic health system. <em>Ann Vasc Surg.</em> 2022.</li>
                         <li>SVS/VQI. Women, mortality, and AAA repair (34.4% vs 26.6%).</li>
                         <li>Leone N et al. Rupture, repair, and death of AAA under surveillance. <em>J Clin Med.</em> 2023.</li>
                         <li>Brinster CJ et al. Financial viability of EVAR (~$8k margin per case). <em>J Vasc Surg.</em> 2021.</li>
